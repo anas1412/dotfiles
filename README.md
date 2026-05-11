@@ -10,13 +10,13 @@ Managed configs for my CachyOS (Arch Linux) KDE Plasma desktop.
    /   ,,   \    Kernel    ➜  Linux 7.0.5-2-cachyos
   /   |  |   \   Uptime    ➜  21 hours, 10 mins
  /_-''    ''-_\  Packages  ➜  1425 (pacman)
-                Shell      ➜  opencode
-                WM         ➜  KWin (Wayland)
-                Terminal   ➜  konsole 26.4.1
-                CPU        ➜  Intel(R) Core(TM) i5-10300H (8) @ 4.50 GHz - 77.0°C
-                GPU 1      ➜  NVIDIA GeForce GTX 1650 - 54.0°C [Discrete]
-                GPU 2      ➜  Intel UHD Graphics @ 1.05 GHz [Integrated]
-                Memory     ➜  8.42 GiB / 15.39 GiB (55%)
+                 Shell ➜ fish 4.7.1
+                 WM         ➜  KWin (Wayland)
+                 Terminal   ➜  konsole 26.4.1
+                 CPU        ➜  Intel(R) Core(TM) i5-10300H (8) @ 4.50 GHz - 77.0°C
+                 GPU 1      ➜  NVIDIA GeForce GTX 1650 - 54.0°C [Discrete]
+                 GPU 2      ➜  Intel UHD Graphics @ 1.05 GHz [Integrated]
+                 Memory     ➜  8.42 GiB / 15.39 GiB (55%)
 ```
 
 ## Structure
