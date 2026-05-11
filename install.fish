@@ -13,78 +13,137 @@ function banner
     set_color normal
 end
 
-function run_backup
-    fish scripts/backup.fish
+function await_enter
+    echo ""
+    while read -t 0 -l _ 2>/dev/null; end
+    read -P "Press Enter to continue..."
 end
 
-function run_restore
-    fish scripts/audit.fish
-    if test $status -ne 0
-        echo "Audit failed. Restore aborted."
-        return 1
+# ── System submenu ──────────────────────────
+
+function system_menu
+    while true
+        banner
+        echo ""
+        set choice (gum choose --header "" --cursor "▸ " --height 5 \
+            "1) Backup dotfiles" \
+            "2) Install or Restore dotfiles" \
+            "3) Audit" \
+            "0) Back to main menu")
+
+        switch "$choice"
+            case "1) Backup dotfiles"
+                fish scripts/backup.fish
+                await_enter
+            case "2) Install or Restore dotfiles"
+                fish scripts/audit.fish
+                if test $status -ne 0
+                    echo "Audit failed. Restore aborted."
+                    await_enter
+                    continue
+                end
+                fish scripts/restore.fish
+                await_enter
+            case "3) Audit"
+                fish scripts/audit.fish
+                await_enter
+            case "0) Back to main menu"
+                return
+        end
     end
-    fish scripts/restore.fish
 end
 
-function run_audit
-    fish scripts/audit.fish
-end
+# ── Maintenance submenu ─────────────────────
 
-function run_bluetooth_mic_fix
-    fish scripts/bluetooth-mic-fix.fish
-end
+function maintenance_menu
+    while true
+        banner
+        echo ""
+        set choice (gum choose --header "" --cursor "▸ " --height 10 \
+            "1) Full maintenance" \
+            "2) Update only" \
+            "3) Clean cache only" \
+            "4) Remove orphans only" \
+            "5) Clean journal only" \
+            "6) Manage snapshots only" \
+            "7) Flatpak only" \
+            "8) Bluetooth Mic Fix" \
+            "0) Back to main menu")
 
-function run_maintenance
-    fish scripts/maintenance.fish
-    if test $status -eq 42
-        return 42
+        switch "$choice"
+            case "1) Full maintenance"
+                fish scripts/maintenance.fish --all
+                await_enter
+            case "2) Update only"
+                fish scripts/maintenance.fish --update
+                await_enter
+            case "3) Clean cache only"
+                fish scripts/maintenance.fish --clean-cache
+                await_enter
+            case "4) Remove orphans only"
+                fish scripts/maintenance.fish --orphans
+                await_enter
+            case "5) Clean journal only"
+                fish scripts/maintenance.fish --journal
+                await_enter
+            case "6) Manage snapshots only"
+                fish scripts/maintenance.fish --snapshots
+                await_enter
+            case "7) Flatpak only"
+                fish scripts/maintenance.fish --flatpak
+                await_enter
+            case "8) Bluetooth Mic Fix"
+                fish scripts/bluetooth-mic-fix.fish
+                await_enter
+            case "0) Back to main menu"
+                return
+        end
     end
 end
 
-function run_install_oac
-    fish scripts/install-oac.fish
+# ── Extras submenu ──────────────────────────
+
+function extras_menu
+    while true
+        banner
+        echo ""
+        set choice (gum choose --header "" --cursor "▸ " --height 4 \
+            "1) Theme Info" \
+            "2) Install OpenAgentsControl for opencode" \
+            "0) Back to main menu")
+
+        switch "$choice"
+            case "1) Theme Info"
+                fish scripts/theme-info.fish
+                await_enter
+            case "2) Install OpenAgentsControl for opencode"
+                fish scripts/install-oac.fish
+                await_enter
+            case "0) Back to main menu"
+                return
+        end
+    end
 end
 
-function run_theme_info
-    fish scripts/theme-info.fish
-end
+# ── Main menu loop ──────────────────────────
 
 while true
     banner
     echo ""
-    set choice (gum choose --header "" --cursor "▸ " --height 10 \
-        "1) Backup dotfiles" \
-        "2) Install or Restore dotfiles" \
-        "3) Audit" \
-        "4) Bluetooth Mic Fix" \
-        "5) System Maintenance" \
-        "6) Install OpenAgentsControl for opencode" \
-        "7) Theme Info" \
+    set choice (gum choose --header "" --cursor "▸ " --height 6 \
+        "1) System" \
+        "2) Maintenance" \
+        "3) Extras" \
         "0) Exit")
 
     switch "$choice"
-        case "1) Backup dotfiles"
-            run_backup
-        case "2) Install or Restore dotfiles"
-            run_restore
-        case "3) Audit"
-            run_audit
-        case "4) Bluetooth Mic Fix"
-            run_bluetooth_mic_fix
-        case "5) System Maintenance"
-            run_maintenance
-            if test $status -eq 42
-                continue
-            end
-        case "6) Install OpenAgentsControl for opencode"
-            run_install_oac
-        case "7) Theme Info"
-            run_theme_info
+        case "1) System"
+            system_menu
+        case "2) Maintenance"
+            maintenance_menu
+        case "3) Extras"
+            extras_menu
         case "0) Exit"
             exit 0
     end
-
-    echo ""
-    while read -t 0 -l _ 2>/dev/null; end
-    read -P "Press Enter to continue..."
 end
