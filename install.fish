@@ -36,22 +36,30 @@ end
 
 function run_maintenance
     fish scripts/maintenance.fish
+    if test $status -eq 42
+        return 42
+    end
 end
 
 function run_install_oac
     fish scripts/install-oac.fish
 end
 
+function run_theme_info
+    fish scripts/theme-info.fish
+end
+
 while true
     banner
     echo ""
-    set choice (gum choose --header "" --cursor "▸ " --height 9 \
+    set choice (gum choose --header "" --cursor "▸ " --height 10 \
         "1) Backup dotfiles" \
         "2) Install or Restore dotfiles" \
         "3) Audit" \
         "4) Bluetooth Mic Fix" \
         "5) System Maintenance" \
         "6) Install OpenAgentsControl for opencode" \
+        "7) Theme Info" \
         "0) Exit")
 
     switch "$choice"
@@ -65,8 +73,13 @@ while true
             run_bluetooth_mic_fix
         case "5) System Maintenance"
             run_maintenance
+            if test $status -eq 42
+                continue
+            end
         case "6) Install OpenAgentsControl for opencode"
             run_install_oac
+        case "7) Theme Info"
+            run_theme_info
         case "0) Exit"
             exit 0
     end

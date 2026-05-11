@@ -31,7 +31,8 @@ dotfiles/
 │   ├── kde_style.fish        # Export KDE theme vars
 │   ├── bluetooth-mic-fix.fish # Fix BT audio + built-in mic conflict
 │   ├── maintenance.fish      # System update, cleanup, and maintenance
-│   └── install-oac.fish      # Install OpenAgentsControl globally
+│   ├── install-oac.fish      # Install OpenAgentsControl globally
+│   └── theme-info.fish       # Display current KDE theme/settings
 ├── config/
 │   ├── fish/                 # Fish shell (pure prompt, bun integration, mt5)
 │   ├── alacritty/            # Alacritty terminal
@@ -84,13 +85,14 @@ cd ~/dotfiles
 ```
 DOTFILES MANAGER - ANAS1412
 ==================================
-1) Backup
-2) Restore
+1) Backup dotfiles
+2) Install or Restore dotfiles
 3) Audit
 4) Bluetooth Mic Fix
 5) System Maintenance
-6) Install OpenAgentsControl
-7) Exit
+6) Install OpenAgentsControl for opencode
+7) Theme Info
+0) Exit
 ==================================
 ```
 
@@ -104,6 +106,7 @@ DOTFILES MANAGER - ANAS1412
 | **Bluetooth Mic Fix** | `fish scripts/bluetooth-mic-fix.fish` |
 | **Maintenance** | `fish scripts/maintenance.fish` |
 | **Install OpenAgentsControl** | `fish scripts/install-oac.fish` |
+| **Theme Info** | `fish scripts/theme-info.fish` |
 
 ## What each script does
 
@@ -168,6 +171,17 @@ Installs [OpenAgentsControl](https://github.com/darrenhinde/OpenAgentsControl) g
 - Skills and context files for approval-gated AI workflows
 
 Prompts for confirmation before downloading.
+
+### `theme-info.fish`
+Displays current KDE theme settings in a clean summary:
+- Plasma Style, Color Scheme, Window Decorations
+- Icon Theme, Cursor Theme
+- Widget/Application Style
+- Fonts (General, Fixed Width, Menu)
+- GTK Theme, Icons, Font
+- Splash Screen engine and theme
+
+Reads from KDE config files (`kdeglobals`, `kwinrc`, `plasmarc`, `ksplashrc`) and GTK settings.
 
 ## Restoring on a fresh install
 

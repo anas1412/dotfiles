@@ -217,22 +217,29 @@ end
 
 function interactive_menu
     clear
-    echo "$BOLD$CYAN========================================$RESET"
-    echo "$BOLD$CYAN  SYSTEM MAINTENANCE$RESET"
-    echo "$BOLD$CYAN========================================$RESET"
-    echo "  1) Full maintenance (all modules)"
-    echo "  2) System update only"
-    echo "  3) Clean package cache only"
-    echo "  4) Remove orphaned packages only"
-    echo "  5) Clean journal logs only"
-    echo "  6) Manage snapper snapshots only"
-    echo "  7) Flatpak maintenance only"
-    echo "  8) Exit"
-    echo "$CYAN========================================$RESET"
-    read -P "Select option: " opt
+    set_color -o cyan
+    echo "                       _ _  _   _ ____"
+    echo "  __ _ _ __   __ _ ___/ | || | / |___ \\"
+    echo " / _\` | '_ \\ / _\` / __| | || |_| | __) |"
+    echo "| (_| | | | | (_| \\__ \\ |__   _| |/ __/"
+    echo " \\__,_|_| |_|\\__,_|___/_|  |_| |_|_____|"
+    set_color -o white
+    echo "           SYSTEM MAINTENANCE"
+    set_color normal
+    echo ""
 
-    switch $opt
-        case 1
+    set choice (gum choose --header "" --cursor "▸ " --height 10 \
+        "1) Full maintenance (all modules)" \
+        "2) System update only" \
+        "3) Clean package cache only" \
+        "4) Remove orphaned packages only" \
+        "5) Clean journal logs only" \
+        "6) Manage snapper snapshots only" \
+        "7) Flatpak maintenance only" \
+        "0) Back to main menu")
+
+    switch "$choice"
+        case "1) Full maintenance (all modules)"
             update_system
             clean_package_cache
             remove_orphans
@@ -240,24 +247,26 @@ function interactive_menu
             manage_snapshots
             flatpak_maintenance
             show_summary
-        case 2
+        case "2) System update only"
             update_system
             show_summary
-        case 3
+        case "3) Clean package cache only"
             clean_package_cache
-        case 4
+        case "4) Remove orphaned packages only"
             remove_orphans
-        case 5
+        case "5) Clean journal logs only"
             clean_journal
-        case 6
+        case "6) Manage snapper snapshots only"
             manage_snapshots
-        case 7
+        case "7) Flatpak maintenance only"
             flatpak_maintenance
-        case 8
-            exit 0
-        case '*'
-            echo "$RED Invalid option$RESET"
+        case "0) Back to main menu"
+            exit 42
     end
+
+    echo ""
+    while read -t 0 -l _ 2>/dev/null; end
+    read -P "Press Enter to continue..."
 end
 
 log "=== MAINTENANCE START ==="
