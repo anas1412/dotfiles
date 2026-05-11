@@ -2,20 +2,29 @@
 
 function banner
     clear
-    echo "DOTFILES MANAGER - ANAS1412"
-    echo "=================================="
+    set_color -o cyan
+    echo "                       _ _  _   _ ____"
+    echo "  __ _ _ __   __ _ ___/ | || | / |___ \\"
+    echo " / _\` | '_ \\ / _\` / __| | || |_| | __) |"
+    echo "| (_| | | | | (_| \\__ \\ |__   _| |/ __/"
+    echo " \\__,_|_| |_|\\__,_|___/_|  |_| |_|_____|"
+    set_color -o white
+    echo "          DOTFILES MANAGER"
+    set_color normal
+    echo ""
 end
 
 function menu
     banner
-    echo "1) Backup"
-    echo "2) Restore"
-    echo "3) Audit"
-    echo "4) Bluetooth Mic Fix"
-    echo "5) System Maintenance"
-    echo "6) Install OpenAgentsControl"
-    echo "7) Exit"
-    echo "=================================="
+    echo ""
+    echo "  1) Backup"
+    echo "  2) Restore"
+    echo "  3) Audit"
+    echo "  4) Bluetooth Mic Fix"
+    echo "  5) System Maintenance"
+    echo "  6) Install OpenAgentsControl for opencode"
+    echo "  0) Exit"
+    echo ""
 end
 
 function run_backup
@@ -76,7 +85,7 @@ while true
             run_install_oac
             read -P "Done. Press Enter..."
 
-        case 7
+        case 0
             exit 0
 
         case '*'
