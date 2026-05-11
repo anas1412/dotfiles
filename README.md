@@ -19,45 +19,7 @@ Managed configs for my CachyOS (Arch Linux) KDE Plasma desktop.
                  Memory     ➜  8.42 GiB / 15.39 GiB (55%)
 ```
 
-## Structure
-
-```
-dotfiles/
-├── install.fish              # Main entry point (menu-driven)
-├── scripts/
-│   ├── audit.fish            # Pre-restore health check
-│   ├── backup.fish           # Snapshot current configs
-│   ├── restore.fish          # Restore configs + packages
-│   ├── kde_style.fish        # Export KDE theme vars
-│   ├── bluetooth-mic-fix.fish # Fix BT audio + built-in mic conflict
-│   ├── maintenance.fish      # System update, cleanup, and maintenance
-│   ├── install-opencode.fish  # Install opencode CLI + OAC
-│   └── theme-info.fish       # Display current KDE theme/settings
-├── systemd/
-│   ├── dotfiles-backup.service # Systemd service unit
-│   └── dotfiles-backup.timer   # Daily backup timer
-├── config/
-│   ├── fish/                 # Fish shell (pure prompt, bun integration, mt5)
-│   ├── alacritty/            # Alacritty terminal
-│   ├── kitty/                # Kitty terminal (empty — placeholder)
-│   ├── ghostty/              # Ghostty terminal (empty — placeholder)
-│   ├── fastfetch/            # Fastfetch system info config
-│   ├── git/                  # Git config placeholder
-│   └── kde/                  # KDE Plasma config snapshots
-│       ├── kdeglobals
-│       ├── kwinrc
-│       ├── plasmarc
-│       ├── dolphinrc
-│       ├── konsolerc
-│       ├── kglobalshortcutsrc
-│       ├── mimeapps.list
-│       └── style.env         # KDE theme vars (icon, cursor, color, font)
-└── packages/
-    ├── pacman.txt            # Full native package list
-    ├── pacman-native.txt     # Native packages (backup)
-    ├── pacman-foreign.txt    # AUR packages (via paru)
-    └── flatpak.txt           # Flatpak (empty — placeholder)
-```
+![Desktop Screenshot](Screenshot.png)
 
 ## Requirements
 
