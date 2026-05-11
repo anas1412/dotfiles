@@ -59,7 +59,7 @@ function maintenance_menu
     while true
         banner
         echo ""
-        set choice (gum choose --header "" --cursor "▸ " --height 10 \
+        set choice (gum choose --header "" --cursor "▸ " --height 9 \
             "1) Full maintenance" \
             "2) Update only" \
             "3) Clean cache only" \
@@ -67,7 +67,6 @@ function maintenance_menu
             "5) Clean journal only" \
             "6) Manage snapshots only" \
             "7) Flatpak only" \
-            "8) Bluetooth Mic Fix" \
             "0) Back to main menu")
 
         switch "$choice"
@@ -92,9 +91,6 @@ function maintenance_menu
             case "7) Flatpak only"
                 fish scripts/maintenance.fish --flatpak
                 await_enter
-            case "8) Bluetooth Mic Fix"
-                fish scripts/bluetooth-mic-fix.fish
-                await_enter
             case "0) Back to main menu"
                 return
         end
@@ -108,16 +104,16 @@ function extras_menu
         banner
         echo ""
         set choice (gum choose --header "" --cursor "▸ " --height 4 \
-            "1) Theme Info" \
-            "2) Install OpenAgentsControl for opencode" \
+            "1) Install Opencode + OAC" \
+            "2) Bluetooth Mic Fix" \
             "0) Back to main menu")
 
         switch "$choice"
-            case "1) Theme Info"
-                fish scripts/theme-info.fish
+            case "1) Install Opencode + OAC"
+                fish scripts/install-opencode.fish
                 await_enter
-            case "2) Install OpenAgentsControl for opencode"
-                fish scripts/install-oac.fish
+            case "2) Bluetooth Mic Fix"
+                fish scripts/bluetooth-mic-fix.fish
                 await_enter
             case "0) Back to main menu"
                 return
@@ -130,10 +126,12 @@ end
 while true
     banner
     echo ""
-    set choice (gum choose --header "" --cursor "▸ " --height 6 \
+    set choice (gum choose --header "" --cursor "▸ " --height 8 \
         "1) System" \
         "2) Maintenance" \
         "3) Extras" \
+        "4) Theme Info" \
+        "5) System Info" \
         "0) Exit")
 
     switch "$choice"
@@ -143,6 +141,12 @@ while true
             maintenance_menu
         case "3) Extras"
             extras_menu
+        case "4) Theme Info"
+            fish scripts/theme-info.fish
+            await_enter
+        case "5) System Info"
+            fastfetch
+            await_enter
         case "0) Exit"
             exit 0
     end

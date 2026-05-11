@@ -31,7 +31,7 @@ dotfiles/
 │   ├── kde_style.fish        # Export KDE theme vars
 │   ├── bluetooth-mic-fix.fish # Fix BT audio + built-in mic conflict
 │   ├── maintenance.fish      # System update, cleanup, and maintenance
-│   ├── install-oac.fish      # Install OpenAgentsControl globally
+│   ├── install-opencode.fish  # Install opencode CLI + OAC
 │   └── theme-info.fish       # Display current KDE theme/settings
 ├── config/
 │   ├── fish/                 # Fish shell (pure prompt, bun integration, mt5)
@@ -40,7 +40,6 @@ dotfiles/
 │   ├── ghostty/              # Ghostty terminal (empty — placeholder)
 │   ├── fastfetch/            # Fastfetch system info config
 │   ├── git/                  # Git config placeholder
-│   ├── opencode/             # Opencode AI config (opencode.json)
 │   └── kde/                  # KDE Plasma config snapshots
 │       ├── kdeglobals
 │       ├── kwinrc
@@ -84,16 +83,12 @@ cd ~/dotfiles
 
 ```
 DOTFILES MANAGER - ANAS1412
-==================================
-1) Backup dotfiles
-2) Install or Restore dotfiles
-3) Audit
-4) Bluetooth Mic Fix
-5) System Maintenance
-6) Install OpenAgentsControl for opencode
-7) Theme Info
-0) Exit
-==================================
+
+Main menu:
+  1) System        → Backup / Restore / Audit
+  2) Maintenance   → Full / Update / Clean / Orphans / Journal / Snapshots / Flatpak / BT Fix
+  3) Extras        → Theme Info / Install Opencode + OAC
+  0) Exit
 ```
 
 ### Manual commands
@@ -105,7 +100,7 @@ DOTFILES MANAGER - ANAS1412
 | **Restore** | `fish scripts/restore.fish` |
 | **Bluetooth Mic Fix** | `fish scripts/bluetooth-mic-fix.fish` |
 | **Maintenance** | `fish scripts/maintenance.fish` |
-| **Install OpenAgentsControl** | `fish scripts/install-oac.fish` |
+| **Install Opencode + OAC** | `fish scripts/install-opencode.fish` |
 | **Theme Info** | `fish scripts/theme-info.fish` |
 
 ## What each script does
@@ -118,7 +113,6 @@ DOTFILES MANAGER - ANAS1412
 5. Copies KDE config files (selective safe files)
 6. Copies terminal configs (Alacritty, Kitty, Ghostty)
 7. Exports KDE theme vars (icons, cursors, color scheme, font) via `kde_style.fish`
-8. Exports Opencode config files (`opencode.json`, `.gitignore`, `package.json` — excludes `node_modules`)
 
 ### `audit.fish`
 Checks system prerequisites and file integrity:
@@ -136,7 +130,6 @@ Returns exit code 0 when safe to restore, 1 on warnings.
 4. Restores KDE config files
 5. Restores terminal configs (Alacritty, Kitty, Ghostty)
 6. Applies KDE theme from `style.env` using `kwriteconfig5`
-7. Restores Opencode config files (`opencode.json`, `.gitignore`, `package.json`)
 
 ### `bluetooth-mic-fix.fish`
 Fixes PipeWire Bluetooth audio when the built-in mic interferes with headset output:
@@ -163,14 +156,13 @@ fish scripts/maintenance.fish --update    # System update only
 fish scripts/maintenance.fish --orphans   # Orphans only
 ```
 
-### `install-oac.fish`
-Installs [OpenAgentsControl](https://github.com/darrenhinde/OpenAgentsControl) globally into `~/.config/opencode/`:
-- Agents: OpenAgent, OpenCoder, SystemBuilder
-- Subagents: ContextScout, TaskManager, CoderAgent, and more
-- Commands: `/add-context`, `/commit`, `/test`, `/context`
-- Skills and context files for approval-gated AI workflows
+### `install-opencode.fish`
+Installs the **opencode CLI** (if missing) and then optionally installs **OpenAgentsControl (OAC)** globally:
+1. Checks for `opencode` — installs via `paru -S opencode` (Arch native), falls back to `curl -fsSL https://opencode.ai/install | bash`
+2. If opencode CLI is ready, prompts to install OAC from [github.com/darrenhinde/OpenAgentsControl](https://github.com/darrenhinde/OpenAgentsControl)
+3. OAC includes agents (OpenAgent, OpenCoder, SystemBuilder), subagents, commands, skills, and context files
 
-Prompts for confirmation before downloading.
+Prompts for confirmation before the OAC download.
 
 ### `theme-info.fish`
 Displays current KDE theme settings in a clean summary:

@@ -60,7 +60,7 @@ check_dir "$ROOT"
 check_dir "$ROOT/scripts"
 check_dir "$ROOT/config"
 check_dir "$ROOT/packages"
-check_dir "$ROOT/config/opencode"
+
 
 echo ""
 echo "== Required files =="
@@ -70,8 +70,7 @@ check_file "$ROOT/scripts/backup.fish"
 check_file "$ROOT/scripts/restore.fish"
 check_file "$ROOT/scripts/kde_style.fish"
 check_file "$ROOT/config/kde/style.env"
-check_file "$ROOT/config/opencode/opencode.json"
-check_file "$ROOT/config/opencode/.gitignore"
+
 
 echo ""
 echo "== KDE runtime config =="

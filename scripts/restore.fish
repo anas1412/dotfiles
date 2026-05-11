@@ -30,8 +30,8 @@ if test -f $ROOT/packages/pacman-foreign.txt
 end
 
 # configs base
-cp -r $ROOT/config/fish ~/.config/ 2>/dev/null
-cp -r $ROOT/config/kde ~/.config/ 2>/dev/null
+cp -r $ROOT/config/fish/. ~/.config/fish/ 2>/dev/null
+cp -r $ROOT/config/kde/. ~/.config/kde/ 2>/dev/null
 
 # terminal restore helper
 function restore_cfg
@@ -40,7 +40,8 @@ function restore_cfg
     set name $argv[3]
 
     if test -d $src
-        cp -r $src $dest 2>/dev/null
+        mkdir -p $dest/$name
+        cp -r $src/. $dest/$name/ 2>/dev/null
         log "Restored $name"
     else
         log "WARN: missing $name config"
@@ -50,19 +51,6 @@ end
 restore_cfg $ROOT/config/alacritty ~/.config "alacritty"
 restore_cfg $ROOT/config/kitty ~/.config "kitty"
 restore_cfg $ROOT/config/ghostty ~/.config "ghostty"
-
-# opencode
-if test -d $ROOT/config/opencode
-    mkdir -p ~/.config/opencode
-    for f in opencode.json .gitignore package.json
-        if test -f $ROOT/config/opencode/$f
-            cp $ROOT/config/opencode/$f ~/.config/opencode/
-            log "Restored Opencode: $f"
-        end
-    end
-else
-    log "WARN: missing Opencode config"
-end
 
 # KDE style (safe parsed system from previous fix)
 set STYLE_FILE "$ROOT/config/kde/style.env"

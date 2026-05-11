@@ -13,8 +13,8 @@ end
 log "=== BACKUP START ==="
 
 # clean snapshot
-rm -rf $CFG/kde $CFG/fish $CFG/alacritty $CFG/kitty $CFG/ghostty $CFG/opencode
-mkdir -p $CFG/kde $CFG/fish $CFG/alacritty $CFG/kitty $CFG/ghostty $CFG/opencode $PKG
+rm -rf $CFG/kde $CFG/fish $CFG/alacritty $CFG/kitty $CFG/ghostty
+mkdir -p $CFG/kde $CFG/fish $CFG/alacritty $CFG/kitty $CFG/ghostty $PKG
 
 # packages
 log "Exporting native packages..."
@@ -25,7 +25,7 @@ pacman -Qqem > $PKG/pacman-foreign.txt
 
 # fish
 log "Copying Fish config..."
-cp -r ~/.config/fish $CFG/ 2>/dev/null
+cp -r ~/.config/fish/. $CFG/fish/ 2>/dev/null
 
 # KDE (selective safe files)
 log "Copying KDE config..."
@@ -45,6 +45,7 @@ function safe_copy
     set name $argv[3]
 
     if test -e $src
+        rm -rf $dest
         cp -r $src $dest 2>/dev/null
         log "Copied $name"
     else
@@ -55,16 +56,6 @@ end
 safe_copy ~/.config/alacritty $CFG/alacritty "alacritty"
 safe_copy ~/.config/kitty $CFG/kitty "kitty"
 safe_copy ~/.config/ghostty $CFG/ghostty "ghostty"
-
-# opencode (selective — skip node_modules)
-log "Copying Opencode config..."
-set opencode_files opencode.json .gitignore package.json
-for f in $opencode_files
-    if test -f ~/.config/opencode/$f
-        cp ~/.config/opencode/$f $CFG/opencode/
-        log "Copied Opencode: $f"
-    end
-end
 
 # style export
 log "Exporting KDE style..."
