@@ -30,7 +30,8 @@ dotfiles/
 │   ├── restore.fish          # Restore configs + packages
 │   ├── kde_style.fish        # Export KDE theme vars
 │   ├── bluetooth-mic-fix.fish # Fix BT audio + built-in mic conflict
-│   └── maintenance.fish      # System update, cleanup, and maintenance
+│   ├── maintenance.fish      # System update, cleanup, and maintenance
+│   └── install-oac.fish      # Install OpenAgentsControl globally
 ├── config/
 │   ├── fish/                 # Fish shell (pure prompt, bun integration, mt5)
 │   ├── alacritty/            # Alacritty terminal
@@ -88,7 +89,8 @@ DOTFILES MANAGER - ANAS1412
 3) Audit
 4) Bluetooth Mic Fix
 5) System Maintenance
-6) Exit
+6) Install OpenAgentsControl
+7) Exit
 ==================================
 ```
 
@@ -101,6 +103,7 @@ DOTFILES MANAGER - ANAS1412
 | **Restore** | `fish scripts/restore.fish` |
 | **Bluetooth Mic Fix** | `fish scripts/bluetooth-mic-fix.fish` |
 | **Maintenance** | `fish scripts/maintenance.fish` |
+| **Install OpenAgentsControl** | `fish scripts/install-oac.fish` |
 
 ## What each script does
 
@@ -156,6 +159,15 @@ fish scripts/maintenance.fish --all       # Run everything
 fish scripts/maintenance.fish --update    # System update only
 fish scripts/maintenance.fish --orphans   # Orphans only
 ```
+
+### `install-oac.fish`
+Installs [OpenAgentsControl](https://github.com/darrenhinde/OpenAgentsControl) globally into `~/.config/opencode/`:
+- Agents: OpenAgent, OpenCoder, SystemBuilder
+- Subagents: ContextScout, TaskManager, CoderAgent, and more
+- Commands: `/add-context`, `/commit`, `/test`, `/context`
+- Skills and context files for approval-gated AI workflows
+
+Prompts for confirmation before downloading.
 
 ## Restoring on a fresh install
 
