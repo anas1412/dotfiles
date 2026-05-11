@@ -13,8 +13,8 @@ end
 log "=== BACKUP START ==="
 
 # clean snapshot
-rm -rf $CFG/kde $CFG/fish $CFG/alacritty $CFG/kitty $CFG/ghostty
-mkdir -p $CFG/kde $CFG/fish $CFG/alacritty $CFG/kitty $CFG/ghostty $PKG
+rm -rf $CFG/kde $CFG/fish $CFG/alacritty $CFG/kitty $CFG/ghostty $CFG/opencode
+mkdir -p $CFG/kde $CFG/fish $CFG/alacritty $CFG/kitty $CFG/ghostty $CFG/opencode $PKG
 
 # packages
 log "Exporting native packages..."
@@ -55,6 +55,16 @@ end
 safe_copy ~/.config/alacritty $CFG/alacritty "alacritty"
 safe_copy ~/.config/kitty $CFG/kitty "kitty"
 safe_copy ~/.config/ghostty $CFG/ghostty "ghostty"
+
+# opencode (selective — skip node_modules)
+log "Copying Opencode config..."
+set opencode_files opencode.json .gitignore package.json
+for f in $opencode_files
+    if test -f ~/.config/opencode/$f
+        cp ~/.config/opencode/$f $CFG/opencode/
+        log "Copied Opencode: $f"
+    end
+end
 
 # style export
 log "Exporting KDE style..."

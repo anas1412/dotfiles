@@ -51,6 +51,19 @@ restore_cfg $ROOT/config/alacritty ~/.config "alacritty"
 restore_cfg $ROOT/config/kitty ~/.config "kitty"
 restore_cfg $ROOT/config/ghostty ~/.config "ghostty"
 
+# opencode
+if test -d $ROOT/config/opencode
+    mkdir -p ~/.config/opencode
+    for f in opencode.json .gitignore package.json
+        if test -f $ROOT/config/opencode/$f
+            cp $ROOT/config/opencode/$f ~/.config/opencode/
+            log "Restored Opencode: $f"
+        end
+    end
+else
+    log "WARN: missing Opencode config"
+end
+
 # KDE style (safe parsed system from previous fix)
 set STYLE_FILE "$ROOT/config/kde/style.env"
 

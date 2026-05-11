@@ -13,7 +13,8 @@ function menu
     echo "3) Audit"
     echo "4) Bluetooth Mic Fix"
     echo "5) System Maintenance"
-    echo "6) Exit"
+    echo "6) Install OpenAgentsControl"
+    echo "7) Exit"
     echo "=================================="
 end
 
@@ -42,6 +43,10 @@ function run_maintenance
     fish scripts/maintenance.fish
 end
 
+function run_install_oac
+    fish scripts/install-oac.fish
+end
+
 while true
     menu
     read -P "Select option: " opt
@@ -68,6 +73,10 @@ while true
             read -P "Done. Press Enter..."
 
         case 6
+            run_install_oac
+            read -P "Done. Press Enter..."
+
+        case 7
             exit 0
 
         case '*'

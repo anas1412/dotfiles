@@ -38,6 +38,7 @@ dotfiles/
 │   ├── ghostty/              # Ghostty terminal (empty — placeholder)
 │   ├── fastfetch/            # Fastfetch system info config
 │   ├── git/                  # Git config placeholder
+│   ├── opencode/             # Opencode AI config (opencode.json)
 │   └── kde/                  # KDE Plasma config snapshots
 │       ├── kdeglobals
 │       ├── kwinrc
@@ -111,6 +112,7 @@ DOTFILES MANAGER - ANAS1412
 5. Copies KDE config files (selective safe files)
 6. Copies terminal configs (Alacritty, Kitty, Ghostty)
 7. Exports KDE theme vars (icons, cursors, color scheme, font) via `kde_style.fish`
+8. Exports Opencode config files (`opencode.json`, `.gitignore`, `package.json` — excludes `node_modules`)
 
 ### `audit.fish`
 Checks system prerequisites and file integrity:
@@ -128,6 +130,7 @@ Returns exit code 0 when safe to restore, 1 on warnings.
 4. Restores KDE config files
 5. Restores terminal configs (Alacritty, Kitty, Ghostty)
 6. Applies KDE theme from `style.env` using `kwriteconfig5`
+7. Restores Opencode config files (`opencode.json`, `.gitignore`, `package.json`)
 
 ### `bluetooth-mic-fix.fish`
 Fixes PipeWire Bluetooth audio when the built-in mic interferes with headset output:
