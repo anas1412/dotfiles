@@ -29,7 +29,8 @@ dotfiles/
 │   ├── backup.fish           # Snapshot current configs
 │   ├── restore.fish          # Restore configs + packages
 │   ├── kde_style.fish        # Export KDE theme vars
-│   └── bluetooth-mic-fix.fish # Fix BT audio + built-in mic conflict
+│   ├── bluetooth-mic-fix.fish # Fix BT audio + built-in mic conflict
+│   └── maintenance.fish      # System update, cleanup, and maintenance
 ├── config/
 │   ├── fish/                 # Fish shell (pure prompt, bun integration, mt5)
 │   ├── alacritty/            # Alacritty terminal
@@ -85,7 +86,8 @@ DOTFILES MANAGER - ANAS1412
 2) Restore
 3) Audit
 4) Bluetooth Mic Fix
-5) Exit
+5) System Maintenance
+6) Exit
 ==================================
 ```
 
@@ -97,6 +99,7 @@ DOTFILES MANAGER - ANAS1412
 | **Audit** | `fish scripts/audit.fish` |
 | **Restore** | `fish scripts/restore.fish` |
 | **Bluetooth Mic Fix** | `fish scripts/bluetooth-mic-fix.fish` |
+| **Maintenance** | `fish scripts/maintenance.fish` |
 
 ## What each script does
 
@@ -134,6 +137,22 @@ Fixes PipeWire Bluetooth audio when the built-in mic interferes with headset out
 4. Restarts PipeWire/WirePlumber services
 
 Use this when your Bluetooth earbuds sound muffled or drop to headset mode after a call.
+
+### `maintenance.fish`
+System upkeep for Arch/CachyOS with interactive or CLI mode:
+- **System update** — updates official repos (`pacman -Syu`) and AUR (`paru -Syu --aur`)
+- **Package cache cleanup** — removes uninstalled package caches and keeps last 2 versions
+- **Orphan removal** — finds and removes unused dependencies with confirmation
+- **Journal log cleanup** — prunes systemd journals by age
+- **Snapper snapshot management** — cleans old BTRFS snapshots per config
+- **Flatpak maintenance** — updates Flatpaks and removes unused runtimes
+
+Can be run directly with flags:
+```sh
+fish scripts/maintenance.fish --all       # Run everything
+fish scripts/maintenance.fish --update    # System update only
+fish scripts/maintenance.fish --orphans   # Orphans only
+```
 
 ## Restoring on a fresh install
 
