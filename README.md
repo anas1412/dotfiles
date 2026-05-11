@@ -10,7 +10,7 @@ Managed configs for my CachyOS (Arch Linux) KDE Plasma desktop.
    /   ,,   \    Kernel     ➜  Linux 7.0.5-2-cachyos
   /   |  |   \   Uptime     ➜  21 hours, 10 mins
  /_-''    ''-_\  Packages   ➜  1425 (pacman)
-                 Shell      ➜ fish 4.7.1
+                 Shell      ➜  fish 4.7.1
                  WM         ➜  KWin (Wayland)
                  Terminal   ➜  konsole 26.4.1
                  CPU        ➜  Intel(R) Core(TM) i5-10300H (8) @ 4.50 GHz - 77.0°C
