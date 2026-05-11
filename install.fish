@@ -25,17 +25,15 @@ function system_menu
     while true
         banner
         echo ""
-        set choice (gum choose --header "" --cursor "▸ " --height 5 \
-            "1) Backup dotfiles" \
-            "2) Install or Restore dotfiles" \
-            "3) Audit" \
+        set choice (gum choose --header "" --cursor "▸ " --height 6 \
+            "1) Install or Restore dotfiles" \
+            "2) Backup dotfiles" \
+            "3) Push backup to github" \
+            "4) Audit" \
             "0) Back to main menu")
 
         switch "$choice"
-            case "1) Backup dotfiles"
-                fish scripts/backup.fish
-                await_enter
-            case "2) Install or Restore dotfiles"
+            case "1) Install or Restore dotfiles"
                 fish scripts/audit.fish
                 if test $status -ne 0
                     echo "Audit failed. Restore aborted."
@@ -44,7 +42,17 @@ function system_menu
                 end
                 fish scripts/restore.fish
                 await_enter
-            case "3) Audit"
+            case "2) Backup dotfiles"
+                fish scripts/backup.fish
+                await_enter
+            case "3) Push backup to github"
+                git -C $HOME/dotfiles add -A
+                and git -C $HOME/dotfiles diff --cached --quiet
+                and echo "Nothing to push, up to date."
+                    or git -C $HOME/dotfiles commit -m "manual backup $(date +%F)"
+                    and git -C $HOME/dotfiles push
+                await_enter
+            case "4) Audit"
                 fish scripts/audit.fish
                 await_enter
             case "0) Back to main menu"
@@ -103,9 +111,10 @@ function extras_menu
     while true
         banner
         echo ""
-        set choice (gum choose --header "" --cursor "▸ " --height 4 \
+        set choice (gum choose --header "" --cursor "▸ " --height 5 \
             "1) Install Opencode + OAC" \
             "2) Bluetooth Mic Fix" \
+            "3) Install Auto Backup Timer" \
             "0) Back to main menu")
 
         switch "$choice"
@@ -114,6 +123,15 @@ function extras_menu
                 await_enter
             case "2) Bluetooth Mic Fix"
                 fish scripts/bluetooth-mic-fix.fish
+                await_enter
+            case "3) Install Auto Backup Timer"
+                echo ""
+                echo "Installing systemd backup timer..."
+                cp systemd/dotfiles-backup.service systemd/dotfiles-backup.timer ~/.config/systemd/user/
+                and systemctl --user daemon-reload
+                and systemctl --user enable --now dotfiles-backup.timer
+                and echo "Done. Timer runs daily at midnight."
+                or echo "Failed — check if ~/.config/systemd/user/ exists"
                 await_enter
             case "0) Back to main menu"
                 return

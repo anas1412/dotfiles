@@ -33,6 +33,9 @@ dotfiles/
 │   ├── maintenance.fish      # System update, cleanup, and maintenance
 │   ├── install-opencode.fish  # Install opencode CLI + OAC
 │   └── theme-info.fish       # Display current KDE theme/settings
+├── systemd/
+│   ├── dotfiles-backup.service # Systemd service unit
+│   └── dotfiles-backup.timer   # Daily backup timer
 ├── config/
 │   ├── fish/                 # Fish shell (pure prompt, bun integration, mt5)
 │   ├── alacritty/            # Alacritty terminal
@@ -87,7 +90,7 @@ DOTFILES MANAGER - ANAS1412
 Main menu:
   1) System        → Backup / Restore / Audit
   2) Maintenance   → Full / Update / Clean / Orphans / Journal / Snapshots / Flatpak
-  3) Extras        → Install Opencode + OAC / Bluetooth Mic Fix
+  3) Extras        → Install Opencode + OAC / Bluetooth Mic Fix / Install Auto Backup Timer
   4) Theme Info    → Display current KDE theme settings
   5) System Info   → Show system info (fastfetch)
   0) Exit
@@ -104,6 +107,7 @@ Main menu:
 | **Maintenance** | `fish scripts/maintenance.fish` |
 | **Install Opencode + OAC** | `fish scripts/install-opencode.fish` |
 | **Theme Info** | `fish scripts/theme-info.fish` |
+| **Install Auto Backup Timer** | `cp systemd/* ~/.config/systemd/user/ && systemctl --user daemon-reload && systemctl --user enable --now dotfiles-backup.timer` |
 
 ## What each script does
 
@@ -176,6 +180,35 @@ Displays current KDE theme settings in a clean summary:
 - Splash Screen engine and theme
 
 Reads from KDE config files (`kdeglobals`, `kwinrc`, `plasmarc`, `ksplashrc`) and GTK settings.
+
+## Auto backup timer
+
+Two systemd user units in `systemd/` that run `backup.fish` → commit → push daily:
+
+```
+dotfiles-backup.timer     → fires at midnight (or on next boot if PC was off)
+dotfiles-backup.service   → backup → git add → git commit → git push
+```
+
+If nothing changed, it skips the commit and push — no empty commits, no spam.
+
+**Install via menu:**
+```
+Extras → 3) Install Auto Backup Timer
+```
+
+**Manual install:**
+```sh
+cp systemd/* ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable --now dotfiles-backup.timer
+```
+
+**Check status:**
+```sh
+systemctl --user status dotfiles-backup.timer
+journalctl --user -u dotfiles-backup.service   # last run log
+```
 
 ## Restoring on a fresh install
 

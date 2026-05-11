@@ -1,0 +1,9 @@
+[Unit]
+Description=Dotfiles backup — snapshot configs, commit, push
+
+[Service]
+Type=oneshot
+ExecStart=fish %h/dotfiles/scripts/backup.fish
+ExecStart=/usr/bin/git -C %h/dotfiles add -A
+ExecStart=/bin/sh -c 'cd %h/dotfiles && git diff --cached --quiet || git commit -m "auto backup $$(date +%%F)"'
+ExecStart=/usr/bin/git -C %h/dotfiles push
