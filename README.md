@@ -86,8 +86,10 @@ DOTFILES MANAGER - ANAS1412
 
 Main menu:
   1) System        → Backup / Restore / Audit
-  2) Maintenance   → Full / Update / Clean / Orphans / Journal / Snapshots / Flatpak / BT Fix
-  3) Extras        → Theme Info / Install Opencode + OAC
+  2) Maintenance   → Full / Update / Clean / Orphans / Journal / Snapshots / Flatpak
+  3) Extras        → Install Opencode + OAC / Bluetooth Mic Fix
+  4) Theme Info    → Display current KDE theme settings
+  5) System Info   → Show system info (fastfetch)
   0) Exit
 ```
 
