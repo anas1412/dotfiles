@@ -28,7 +28,8 @@ dotfiles/
 │   ├── audit.fish            # Pre-restore health check
 │   ├── backup.fish           # Snapshot current configs
 │   ├── restore.fish          # Restore configs + packages
-│   └── kde_style.fish        # Export KDE theme vars
+│   ├── kde_style.fish        # Export KDE theme vars
+│   └── bluetooth-mic-fix.fish # Fix BT audio + built-in mic conflict
 ├── config/
 │   ├── fish/                 # Fish shell (pure prompt, bun integration, mt5)
 │   ├── alacritty/            # Alacritty terminal
@@ -83,7 +84,8 @@ DOTFILES MANAGER - ANAS1412
 1) Backup
 2) Restore
 3) Audit
-4) Exit
+4) Bluetooth Mic Fix
+5) Exit
 ==================================
 ```
 
@@ -94,6 +96,7 @@ DOTFILES MANAGER - ANAS1412
 | **Backup** | `fish scripts/backup.fish` |
 | **Audit** | `fish scripts/audit.fish` |
 | **Restore** | `fish scripts/restore.fish` |
+| **Bluetooth Mic Fix** | `fish scripts/bluetooth-mic-fix.fish` |
 
 ## What each script does
 
@@ -122,6 +125,15 @@ Returns exit code 0 when safe to restore, 1 on warnings.
 4. Restores KDE config files
 5. Restores terminal configs (Alacritty, Kitty, Ghostty)
 6. Applies KDE theme from `style.env` using `kwriteconfig5`
+
+### `bluetooth-mic-fix.fish`
+Fixes PipeWire Bluetooth audio when the built-in mic interferes with headset output:
+1. Prevents PipeWire from auto-switching to HSP/HFP headset profile (mic takeover)
+2. Forces high-quality A2DP codecs (SBC, SBC-XQ, AAC)
+3. Sets built-in mic volume to a user-defined level (default 35%)
+4. Restarts PipeWire/WirePlumber services
+
+Use this when your Bluetooth earbuds sound muffled or drop to headset mode after a call.
 
 ## Restoring on a fresh install
 

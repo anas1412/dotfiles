@@ -11,7 +11,8 @@ function menu
     echo "1) Backup"
     echo "2) Restore"
     echo "3) Audit"
-    echo "4) Exit"
+    echo "4) Bluetooth Mic Fix"
+    echo "5) Exit"
     echo "=================================="
 end
 
@@ -32,6 +33,10 @@ function run_audit
     fish scripts/audit.fish
 end
 
+function run_bluetooth_mic_fix
+    fish scripts/bluetooth-mic-fix.fish
+end
+
 while true
     menu
     read -P "Select option: " opt
@@ -50,6 +55,10 @@ while true
             read -P "Done. Press Enter..."
 
         case 4
+            run_bluetooth_mic_fix
+            read -P "Done. Press Enter..."
+
+        case 5
             exit 0
 
         case '*'
