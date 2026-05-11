@@ -1,0 +1,5 @@
+
+[Default Applications]
+x-scheme-handler/http=brave-origin-nightly.desktop
+x-scheme-handler/https=brave-origin-nightly.desktop
+text/html=brave-origin-nightly.desktop
