@@ -11,20 +11,6 @@ function banner
     set_color -o white
     echo "          DOTFILES MANAGER"
     set_color normal
-    echo ""
-end
-
-function menu
-    banner
-    echo ""
-    echo "  1) Backup dotfiles"
-    echo "  2) Install or Restore dotfiles"
-    echo "  3) Audit"
-    echo "  4) Bluetooth Mic Fix"
-    echo "  5) System Maintenance"
-    echo "  6) Install OpenAgentsControl for opencode"
-    echo "  0) Exit"
-    echo ""
 end
 
 function run_backup
@@ -57,39 +43,35 @@ function run_install_oac
 end
 
 while true
-    menu
-    read -P "Select option: " opt
+    banner
+    echo ""
+    set choice (gum choose --header "" --cursor "▸ " --height 9 \
+        "1) Backup dotfiles" \
+        "2) Install or Restore dotfiles" \
+        "3) Audit" \
+        "4) Bluetooth Mic Fix" \
+        "5) System Maintenance" \
+        "6) Install OpenAgentsControl for opencode" \
+        "0) Exit")
 
-    switch $opt
-        case 1
+    switch "$choice"
+        case "1) Backup dotfiles"
             run_backup
-            read -P "Done. Press Enter..."
-
-        case 2
+        case "2) Install or Restore dotfiles"
             run_restore
-            read -P "Done. Press Enter..."
-
-        case 3
+        case "3) Audit"
             run_audit
-            read -P "Done. Press Enter..."
-
-        case 4
+        case "4) Bluetooth Mic Fix"
             run_bluetooth_mic_fix
-            read -P "Done. Press Enter..."
-
-        case 5
+        case "5) System Maintenance"
             run_maintenance
-            read -P "Done. Press Enter..."
-
-        case 6
+        case "6) Install OpenAgentsControl for opencode"
             run_install_oac
-            read -P "Done. Press Enter..."
-
-        case 0
+        case "0) Exit"
             exit 0
-
-        case '*'
-            echo "Invalid option"
-            sleep 1
     end
+
+    echo ""
+    while read -t 0 -l _ 2>/dev/null; end
+    read -P "Press Enter to continue..."
 end

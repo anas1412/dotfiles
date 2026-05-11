@@ -68,6 +68,7 @@ f2fs-tools
 fastfetch
 ffmpegthumbnailer
 ffmpegthumbs
+figlet
 filelight
 firefox
 fsarchiver
