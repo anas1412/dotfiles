@@ -1,0 +1,5 @@
+# OpenAgent / OpenCode AI configuration
+.opencode/
+
+# macOS junk
+.DS_Store
