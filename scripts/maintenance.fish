@@ -116,7 +116,7 @@ function clean_journal
         set keep_days 7
     end
 
-    sudo journalctl --vacuum-time="${keep_days}d"
+    sudo journalctl --vacuum-time="$keep_days"d
     if test $status -eq 0
         set journal_cleaned 1
         log "Journal cleaned (kept $keep_days days)"
