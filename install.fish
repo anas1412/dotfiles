@@ -17,8 +17,8 @@ end
 function menu
     banner
     echo ""
-    echo "  1) Backup"
-    echo "  2) Restore"
+    echo "  1) Backup dotfiles"
+    echo "  2) Install or Restore dotfiles"
     echo "  3) Audit"
     echo "  4) Bluetooth Mic Fix"
     echo "  5) System Maintenance"
