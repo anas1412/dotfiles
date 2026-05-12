@@ -474,7 +474,7 @@ function domain_deps
     end
 
     # Scan config.fish for referenced commands
-    set -l refs ""
+    set -l refs
     if test -f $CFG/fish/config.fish
         for line in (cat $CFG/fish/config.fish)
             # alias name="command ..." — extract the command
@@ -524,7 +524,7 @@ function domain_deps
         set -l font_families (grep -i 'family' $CFG/alacritty/alacritty.toml 2>/dev/null | string replace -r '.*family\s*=\s*"([^"]+)".*' '$1' | sort -u)
         if test -n "$font_families"
             # Check if font packages exist in list
-            set -l font_pkgs ""
+            set -l font_pkgs
             for pkg in $all_pkgs
                 if string match -qr 'font|nerd|ttf|noto' $pkg
                     set font_pkgs $font_pkgs $pkg

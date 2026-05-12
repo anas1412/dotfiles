@@ -19,6 +19,40 @@ function await_enter
     read -P "Press Enter to continue..."
 end
 
+# ── Restore submenu ──────────────────────────
+
+function restore_menu
+    while true
+        banner
+        echo ""
+        set choice (gum choose --header "" --cursor "▸ " --height 5 \
+            "1) Full restore (packages + configs + themes)" \
+            "2) Configs only (fish, KDE, terminals)" \
+            "3) Themes only (archive + style)" \
+            "0) Back to system menu")
+
+        switch "$choice"
+            case "1) Full restore (packages + configs + themes)"
+                fish scripts/audit.fish
+                if test $status -ne 0
+                    echo "Audit failed. Restore aborted."
+                    await_enter
+                    continue
+                end
+                fish scripts/restore.fish --all
+                await_enter
+            case "2) Configs only (fish, KDE, terminals)"
+                fish scripts/restore.fish --configs
+                await_enter
+            case "3) Themes only (archive + style)"
+                fish scripts/restore.fish --themes
+                await_enter
+            case "0) Back to system menu"
+                return
+        end
+    end
+end
+
 # ── System submenu ──────────────────────────
 
 function system_menu
@@ -26,22 +60,15 @@ function system_menu
         banner
         echo ""
         set choice (gum choose --header "" --cursor "▸ " --height 6 \
-            "1) Install or Restore dotfiles" \
+            "1) Restore (full / configs / themes)" \
             "2) Backup dotfiles" \
             "3) Push backup to github" \
             "4) Audit" \
             "0) Back to main menu")
 
         switch "$choice"
-            case "1) Install or Restore dotfiles"
-                fish scripts/audit.fish
-                if test $status -ne 0
-                    echo "Audit failed. Restore aborted."
-                    await_enter
-                    continue
-                end
-                fish scripts/restore.fish
-                await_enter
+            case "1) Restore (full / configs / themes)"
+                restore_menu
             case "2) Backup dotfiles"
                 fish scripts/backup.fish
                 await_enter
