@@ -3,8 +3,9 @@
   "logo": {
     "source": "arch_small",
     "padding": {
-      "top": 4,
-      "right": 3
+      "top": 6,
+      "right": 6,
+      "left": 3
     }
   },
   "display": {
@@ -14,10 +15,14 @@
     }
   },
   "modules": [
-    "break",
     "title",
     "separator",
-    "os",
+    // --- Software ---
+    {
+      "type": "os",
+      "key": "OS",
+      "format": "CachyOS"
+    },
     {
       "type": "os",
       "key": "Base",
@@ -26,23 +31,27 @@
     "kernel",
     "uptime",
     "packages",
-    "shell",
-    "wm",
-    "terminal",
-    "terminalfont",
+    "break",
+    // --- Hardware ---
     {
       "type": "cpu",
       "key": "CPU",
       "temp": true,
-      "format": "{name} {temperature}"
+      "format": "{1} {temperature}"
     },
     {
       "type": "gpu",
       "key": "GPU",
       "temp": true,
-      "format": "{name} {temperature}"
+      "format": "{2} {temperature}"
     },
     "memory",
+    "break",
+    // --- Environment ---
+    "shell",
+    "wm",
+    "terminal",
+    "terminalfont",
     "break",
     "colors"
   ]
