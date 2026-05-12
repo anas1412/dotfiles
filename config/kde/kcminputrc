@@ -1,3 +1,6 @@
+[Keyboard]
+NumLock=0
+
 [Libinput][1267][12525][ELAN0710:01 04F3:30ED Mouse]
 PointerAccelerationProfile=1
 

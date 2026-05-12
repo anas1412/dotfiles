@@ -1,0 +1,28 @@
+"Science isn't about why, it's about why not!" - Cave Johnson, Portal 2
+"The right man in the wrong place can make all the difference in the world." - G-Man, Half-Life 2
+"We do what we must because we can." - GLaDOS, Portal
+"Wake me, when you need me." - Master Chief, Halo 3
+"The cake is a lie." - Doug Rattmann, Portal
+"Time, Dr. Freeman? Is it really that time again?" - G-Man, Half-Life 2
+"War. War never changes." - Fallout
+"We are the executioners of the corrupt." - Watch Dogs
+"Stand in the ashes of a trillion dead souls and ask the ghosts if honor matters." - Javik, Mass Effect 3
+"It's time to choose." - G-Man, Half-Life
+"Nothing is true, everything is permitted." - Assassin's Creed
+"I'm making a note here: HUGE SUCCESS." - GLaDOS, Portal
+"Big Brother, no longer works alone." - ctOS, Watch Dogs 2
+"Talk is cheap. Show me the code." - Linus Torvalds
+"Stay hungry. Stay foolish." - Steve Jobs
+"Never trust a computer you can't throw out a window." - Steve Wozniak
+"UNIX is very simple, it just needs a genius to understand its simplicity." - Dennis Ritchie
+"The most dangerous phrase in the language is, 'We've always done it this way.'" - Grace Hopper
+"Information is power. But like all power, there are those who want to keep it for themselves." - Aaron Swartz
+"Any fool can write code that a computer can understand. Good programmers write code that humans can understand." - Martin Fowler
+"I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu)..." - Linus Torvalds
+"Innovation distinguishes between a leader and a follower." - Steve Jobs
+"Simplicity is prerequisite for reliability." - Edsger W. Dijkstra
+"There are only two hard things in Computer Science: cache invalidation and naming things." - Phil Karlton
+"The numbers, Mason! What do they mean?" - Jason Hudson, Black Ops
+"The healthy human mind doesn't wake up in the morning thinking this is its last day on Earth." - Captain Price, Modern Warfare 2
+"We get dirty, and the world stays clean. That's the mission." - Captain Price, Modern Warfare
+"History is written by the victor." - General Shepherd, Modern Warfare 2

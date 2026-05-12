@@ -32,11 +32,15 @@
     "terminalfont",
     {
       "type": "cpu",
-      "temp": true
+      "key": "CPU",
+      "temp": true,
+      "format": "{name} {temperature}"
     },
     {
       "type": "gpu",
-      "temp": true
+      "key": "GPU",
+      "temp": true,
+      "format": "{name} {temperature}"
     },
     "memory",
     "break",
