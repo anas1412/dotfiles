@@ -5,10 +5,23 @@ set -l CYAN (set_color cyan)
 set -l YELLOW (set_color yellow)
 set -l MAGENTA (set_color magenta)
 set -l BOLD (set_color -o)
+set -l DIM (set_color -d)
 set -l RESET (set_color normal)
 
+# Pick the first available KDE config reader
+set -g KDE_READ_TOOL ""
+if type -q kreadconfig6
+    set KDE_READ_TOOL kreadconfig6
+else if type -q kreadconfig5
+    set KDE_READ_TOOL kreadconfig5
+end
+
 function read_kde
-    kreadconfig6 --file $argv[1] --group $argv[2] --key $argv[3] 2>/dev/null
+    if test -z "$KDE_READ_TOOL"
+        echo ""
+        return
+    end
+    $KDE_READ_TOOL --file $argv[1] --group $argv[2] --key $argv[3] 2>/dev/null
 end
 
 function section
@@ -17,13 +30,42 @@ function section
 end
 
 function item
-    printf "  %-22s %s %s\n" "$argv[1]" "➜" "$argv[2]"
+    set -l val $argv[2]
+    if test -z "$val"
+        set val "$DIM(not set)$RESET"
+    end
+    printf "  %-22s %s %s\n" "$argv[1]" "➜" "$val"
+end
+
+function show_font
+    set -l raw (read_kde $argv[1] $argv[2] $argv[3])
+    if test -z "$raw"
+        item $argv[4] ""
+        return
+    end
+    set -l family (string split ',' $raw)[1]
+    set -l size (string split ',' $raw)[2]
+    if test -n "$size"
+        set val "$family, $size"
+    else
+        set val "$family"
+    end
+    item $argv[4] "$val"
 end
 
 clear
 echo "$BOLD$CYAN========================================$RESET"
 echo "$BOLD$CYAN        CURRENT KDE THEME INFO$RESET"
 echo "$BOLD$CYAN========================================$RESET"
+
+if test -z "$KDE_READ_TOOL"
+    echo ""
+    echo "$YELLOW⚠ No KDE config tool found (kreadconfig5/6).$RESET"
+    echo "$DIM  Theme info unavailable — install kde-cli-tools.$RESET"
+    echo ""
+    echo "$BOLD$CYAN========================================$RESET"
+    exit 1
+end
 
 section "Plasma"
 set plasma_style (read_kde plasmarc Theme name)
@@ -40,7 +82,11 @@ section "Icons & Cursors"
 set icon_theme (read_kde kdeglobals Icons Theme)
 item "Icon Theme" "$icon_theme"
 
-set cursor_theme (read_kde kdeglobals Icons CursorTheme)
+# KDE Plasma 6 stores cursor in kcminputrc, Plasma 5 used kdeglobals
+set cursor_theme (read_kde kcminputrc Mouse cursorTheme)
+if test -z "$cursor_theme"
+    set cursor_theme (read_kde kdeglobals Icons CursorTheme)
+end
 if test -z "$cursor_theme"
     set cursor_theme (read_kde kdeglobals "PlasmaCursor" CursorTheme)
 end
@@ -51,14 +97,9 @@ set widget_style (read_kde kdeglobals KDE widgetStyle)
 item "Widget Style" "$widget_style"
 
 section "Fonts"
-set general_font (read_kde kdeglobals General font | string split ',' -f 1,2 | string join '@')
-item "General" "$general_font"
-
-set fixed_font (read_kde kdeglobals General fixed | string split ',' -f 1,2 | string join '@')
-item "Fixed Width" "$fixed_font"
-
-set menu_font (read_kde kdeglobals General menuFont | string split ',' -f 1,2 | string join '@')
-item "Menu" "$menu_font"
+show_font kdeglobals "General" font     "General"
+show_font kdeglobals "General" fixed    "Fixed Width"
+show_font kdeglobals "General" menuFont "Menu"
 
 section "GTK"
 set gtk_theme ""

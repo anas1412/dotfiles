@@ -19,6 +19,7 @@ breeze-gtk
 btop
 btrfs-assistant
 btrfs-progs
+bun
 cachy-update
 cachyos-emerald-kde-theme-git
 cachyos-fish-config

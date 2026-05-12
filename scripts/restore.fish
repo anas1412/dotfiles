@@ -55,6 +55,21 @@ restore_cfg $ROOT/config/ghostty ~/.config "ghostty"
 # KDE style (safe parsed system from previous fix)
 set STYLE_FILE "$ROOT/config/kde/style.env"
 
+# Pick the right KDE tools
+set -l KWRITE ""
+if type -q kwriteconfig6
+    set KWRITE kwriteconfig6
+else if type -q kwriteconfig5
+    set KWRITE kwriteconfig5
+end
+
+set -l KBUILD ""
+if type -q kbuildsycoca6
+    set KBUILD kbuildsycoca6
+else if type -q kbuildsycoca5
+    set KBUILD kbuildsycoca5
+end
+
 if test -f $STYLE_FILE
     set ICON_THEME ""
     set CURSOR_THEME ""
@@ -82,17 +97,23 @@ if test -f $STYLE_FILE
         end
     end
 
-    if type -q kwriteconfig5
-        kwriteconfig5 --file kdeglobals --group Icons --key Theme "$ICON_THEME"
-        kwriteconfig5 --file kdeglobals --group Icons --key CursorTheme "$CURSOR_THEME"
-        kwriteconfig5 --file kdeglobals --group General --key ColorScheme "$COLOR_SCHEME"
-        kwriteconfig5 --file kdeglobals --group General --key font "$FONT"
+    if test -n "$KWRITE"
+        log "Applying KDE theme..."
+        $KWRITE --file kdeglobals --group Icons --key Theme "$ICON_THEME"
+        # KDE Plasma 6 moved cursor theme to kcminputrc
+        if test -n "$CURSOR_THEME"
+            $KWRITE --file kcminputrc --group Mouse --key cursorTheme "$CURSOR_THEME"
+            # Also set legacy location for Plasma 5 compat
+            $KWRITE --file kdeglobals --group Icons --key CursorTheme "$CURSOR_THEME"
+        end
+        $KWRITE --file kdeglobals --group General --key ColorScheme "$COLOR_SCHEME"
+        $KWRITE --file kdeglobals --group General --key font "$FONT"
     else
-        log "WARN: KDE tools missing"
+        log "WARN: KDE config tools missing"
     end
 
-    if type -q kbuildsycoca5
-        kbuildsycoca5 >/dev/null 2>&1
+    if test -n "$KBUILD"
+        $KBUILD >/dev/null 2>&1
     end
 else
     log "WARN: style.env missing"

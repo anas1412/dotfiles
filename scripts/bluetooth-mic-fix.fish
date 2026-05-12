@@ -20,25 +20,25 @@ else
     set VOLUME 35
 end
 
-echo "→ Target mic volume: ${VOLUME}%"
+echo "→ Target mic volume: $VOLUME%"
 
 mkdir -p ~/.config/wireplumber/wireplumber.conf.d
 
 # Anti-hijack config
-cat > ~/.config/wireplumber/wireplumber.conf.d/99-bluetooth-policy.conf << 'EOC'
-wireplumber.settings = {
-    bluetooth.autoswitch-to-headset-profile = false
-}
-EOC
+printf '%s\n' \
+    'wireplumber.settings = {' \
+    '    bluetooth.autoswitch-to-headset-profile = false' \
+    '}' \
+    > ~/.config/wireplumber/wireplumber.conf.d/99-bluetooth-policy.conf
 
 # High quality output config
-cat > ~/.config/wireplumber/wireplumber.conf.d/98-bluetooth-output.conf << 'EOC'
-monitor.bluez.properties = {
-    bluez5.roles = [ a2dp_sink a2dp_source ]
-    bluez5.codecs = [ sbc sbc_xq aac ]
-    bluez5.a2dp.ldac.quality = "hq"
-}
-EOC
+printf '%s\n' \
+    'monitor.bluez.properties = {' \
+    '    bluez5.roles = [ a2dp_sink a2dp_source ]' \
+    '    bluez5.codecs = [ sbc sbc_xq aac ]' \
+    '    bluez5.a2dp.ldac.quality = "hq"' \
+    '}' \
+    > ~/.config/wireplumber/wireplumber.conf.d/98-bluetooth-output.conf
 
 echo "✅ Anti-hijack + High Quality A2DP config applied"
 
@@ -51,7 +51,7 @@ systemctl --user restart pipewire pipewire-pulse wireplumber
 sleep 2
 
 echo "$GREEN🎉 All fixes applied successfully!$RESET"
-echo "   → Built-in mic locked at ${VOLUME}%"
+echo "   → Built-in mic locked at $VOLUME%"
 echo "   → Bluetooth earbuds output set to high quality (A2DP)"
 echo ""
 echo "Reconnect your Bluetooth audio device now for best results."

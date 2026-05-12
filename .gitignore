@@ -3,3 +3,5 @@
 
 # macOS junk
 .DS_Store
+
+*.log
