@@ -223,6 +223,7 @@ upower
 usb_modeswitch
 usbutils
 vim
+vlc
 vlc-plugins-all
 vulkan-icd-loader
 vulkan-intel

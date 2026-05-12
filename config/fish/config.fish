@@ -9,3 +9,10 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# custom aliases
+alias anime="curd -rofi -image-preview"
+
+function ai
+    opencode run -m opencode/big-pickle $argv
+end

@@ -1,4 +1,5 @@
 ani-cli
 brave-origin-nightly-bin
+curd
 gradia
 tuxmanager
