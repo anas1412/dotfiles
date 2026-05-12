@@ -77,6 +77,32 @@ if test $do_packages -eq 1
             log "WARN: paru missing, skipping AUR packages"
         end
     end
+
+    log "Installing theme packages..."
+    if test -f $ROOT/packages/theme-deps.txt
+        set -l native_pkgs ""
+        set -l aur_pkgs ""
+        for line in (cat $ROOT/packages/theme-deps.txt)
+            pacman -Si $line >/dev/null 2>&1
+            if test $status -eq 0
+                set native_pkgs "$native_pkgs $line"
+            else
+                set aur_pkgs "$aur_pkgs $line"
+            end
+        end
+        if test -n "$native_pkgs"
+            sudo pacman -S --needed $native_pkgs
+        end
+        if test -n "$aur_pkgs"
+            if type -q paru
+                paru -S --needed $aur_pkgs
+            else
+                log "  WARN: paru missing, skipping AUR theme packages"
+            end
+        end
+    else
+        log "  No theme-deps.txt found (run backup.fish to generate)"
+    end
 end
 
 # ── Configs ────────────────────────────────────

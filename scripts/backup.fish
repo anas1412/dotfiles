@@ -23,6 +23,9 @@ pacman -Qqen > $PKG/pacman-native.txt
 log "Exporting AUR packages..."
 pacman -Qqem > $PKG/pacman-foreign.txt
 
+# clean previous theme deps (regenerated fresh each run)
+rm -f $PKG/theme-deps.txt
+
 # fish (exclude history/variables — don't want typing history in git)
 log "Copying Fish config..."
 rm -rf $CFG/fish
@@ -148,6 +151,77 @@ if test -n "$KREAD"
     end
 else
     log "  WARN: KDE config reader not available, skipping theme backup"
+end
+
+# theme package deps: detect which packages own active theme files in /usr/share/
+# (cursors, icons, colors, etc. — so restore installs them automatically)
+log "Detecting theme package dependencies..."
+if test -n "$KREAD"
+    set -l pkg_list $PKG/theme-deps.txt
+    rm -f $pkg_list
+
+    function check_theme_pkg
+        set -l path $argv[1]
+        set -l out $argv[2]
+        if test -e $path
+            set -l pkg (pacman -Qo $path 2>/dev/null | string replace -r '.* is owned by (\S+).*' '$1')
+            if test -n "$pkg"
+                echo "$pkg" >> $out
+            end
+        end
+    end
+
+    # Color scheme package
+    set scheme ($KREAD --file kdeglobals --group General --key ColorScheme 2>/dev/null)
+    if test -n "$scheme"
+        check_theme_pkg "/usr/share/color-schemes/$scheme.colors" $pkg_list
+        check_theme_pkg "/usr/share/plasma/color-schemes/$scheme.colors" $pkg_list
+    end
+
+    # Cursor theme package
+    set cursor ($KREAD --file kcminputrc --group Mouse --key cursorTheme 2>/dev/null)
+    if test -z "$cursor"
+        set cursor ($KREAD --file kdeglobals --group Icons --key CursorTheme 2>/dev/null)
+    end
+    if test -n "$cursor"
+        check_theme_pkg "/usr/share/icons/$cursor/cursor.theme" $pkg_list
+        check_theme_pkg "/usr/share/icons/$cursor" $pkg_list
+    end
+
+    # Icon theme package
+    set icons ($KREAD --file kdeglobals --group Icons --key Theme 2>/dev/null)
+    if test -n "$icons"
+        check_theme_pkg "/usr/share/icons/$icons/index.theme" $pkg_list
+    end
+
+    # Plasma theme package
+    set plasma ($KREAD --file plasmarc --group Theme --key name 2>/dev/null)
+    if test -n "$plasma"
+        check_theme_pkg "/usr/share/plasma/desktoptheme/$plasma/metadata.desktop" $pkg_list
+    end
+
+    # Window decoration package
+    set deco ($KREAD --file kwinrc --group "org.kde.kdecoration2" --key theme 2>/dev/null)
+    if test -n "$deco"
+        set deco_name (string split '__' $deco)[-1]
+        check_theme_pkg "/usr/share/aurorae/themes/$deco_name/metadata.desktop" $pkg_list
+    end
+
+    # Deduplicate and clean
+    if test -f $pkg_list
+        sort -u -o $pkg_list $pkg_list
+        set -l count (wc -l < $pkg_list | string trim)
+        if test $count -gt 0
+            log "  Theme packages detected: "(string join ', ' (cat $pkg_list))
+        else
+            rm $pkg_list
+            log "  No theme-specific packages found"
+        end
+    else
+        log "  No theme packages to track"
+    end
+else
+    log "  WARN: KDE config reader not available, skipping theme package detection"
 end
 
 # compress themes into a single archive

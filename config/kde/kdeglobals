@@ -121,6 +121,7 @@ smallestReadableFont=JetBrainsMono Nerd Font Mono,8,-1,5,400,0,0,0,0,0,0,0,0,0,0
 toolBarFont=JetBrainsMono Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
 
 [Icons]
+CursorTheme=capitaine-cursors
 Theme=breeze
 
 [KDE]
