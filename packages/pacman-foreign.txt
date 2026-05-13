@@ -2,4 +2,5 @@ ani-cli
 brave-origin-nightly-bin
 curd
 gradia
+kopuz
 tuxmanager

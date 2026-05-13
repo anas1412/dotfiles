@@ -192,6 +192,8 @@ pv
 python
 python-defusedxml
 python-packaging
+python-pip
+python-pipx
 qbittorrent
 rebuild-detector
 reflector

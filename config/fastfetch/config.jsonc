@@ -6,6 +6,10 @@
       "top": 6,
       "right": 6,
       "left": 3
+    },
+    "color": {
+      "1": "cyan",
+      "2": "blue"
     }
   },
   "display": {
@@ -20,38 +24,89 @@
     // --- Software ---
     {
       "type": "os",
-      "key": "OS",
-      "format": "CachyOS"
+      "key": "󰣇 OS",
+      "format": "CachyOS",
+      "keyColor": "cyan"
     },
     {
       "type": "os",
-      "key": "Base",
-      "format": "Arch Linux"
+      "key": " Base",
+      "format": "Arch Linux",
+      "keyColor": "blue"
     },
-    "kernel",
-    "uptime",
-    "packages",
+    {
+      "type": "kernel",
+      "key": " Kernel",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "uptime",
+      "key": " Uptime",
+      "keyColor": "green"
+    },
+    {
+      "type": "packages",
+      "key": "󰏗 Packages",
+      "keyColor": "magenta"
+    },
     "break",
     // --- Hardware ---
     {
+      "type": "host",
+      "key": "󰍹 Host",
+      "keyColor": "red"
+    },
+    {
       "type": "cpu",
-      "key": "CPU",
+      "key": " CPU",
       "temp": true,
-      "format": "{1} {temperature}"
+      "format": "{1} {temperature}",
+      "keyColor": "yellow"
     },
     {
       "type": "gpu",
-      "key": "GPU",
+      "key": "󰢮 GPU",
       "temp": true,
-      "format": "{2} {temperature}"
+      "format": "{2} {temperature}",
+      "keyColor": "magenta"
     },
-    "memory",
+    {
+      "type": "memory",
+      "key": " Memory",
+      "keyColor": "green"
+    },
+    {
+      "type": "disk",
+      "key": "󰋊 Storage",
+      "keyColor": "blue"
+    },
     "break",
     // --- Environment ---
-    "shell",
-    "wm",
-    "terminal",
-    "terminalfont",
+    {
+      "type": "shell",
+      "key": " Shell",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "de",
+      "key": " DE",
+      "keyColor": "red"
+    },
+    {
+      "type": "wm",
+      "key": " WM",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminal",
+      "key": " Terminal",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "terminalfont",
+      "key": " Font",
+      "keyColor": "green"
+    },
     "break",
     "colors"
   ]

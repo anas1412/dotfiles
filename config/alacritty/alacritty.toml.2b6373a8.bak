@@ -22,8 +22,3 @@ style = "Italic"
 [window.dimensions]
 columns = 80
 lines = 28
-
-[[keyboard.bindings]]
-key = "Return"
-mods = "Shift"
-chars = "\u001B\r"
