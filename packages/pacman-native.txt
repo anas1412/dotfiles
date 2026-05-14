@@ -72,6 +72,7 @@ ffmpegthumbs
 figlet
 filelight
 firefox
+freerdp
 fsarchiver
 fwupd
 gedit
@@ -185,6 +186,8 @@ plasma-thunderbolt
 plocate
 plymouth
 plymouth-kcm
+podman
+podman-compose
 poppler-glib
 power-profiles-daemon
 powerdevil
