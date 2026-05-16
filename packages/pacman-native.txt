@@ -132,6 +132,7 @@ linux-cachyos-lts-headers
 linux-cachyos-lts-nvidia-open
 linux-cachyos-nvidia-open
 linux-firmware
+localsend
 logrotate
 lsb-release
 lsscsi
@@ -144,6 +145,7 @@ mesa-utils
 micro
 mkinitcpio
 modemmanager
+mpd
 mtools
 nano
 nano-syntax-highlighting
@@ -201,6 +203,7 @@ qbittorrent
 rebuild-detector
 reflector
 ripgrep
+rmpc
 rsync
 s-nail
 sddm

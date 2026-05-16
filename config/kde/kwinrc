@@ -30,6 +30,7 @@ magnetileEnabled=false
 overviewEnabled=false
 screenedgeEnabled=false
 shakecursorEnabled=false
+wobblywindowsEnabled=true
 
 [Script-karousel]
 floatingKeepAbove=true
