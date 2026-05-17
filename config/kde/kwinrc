@@ -52,16 +52,16 @@ padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][46deb3ee-e25d-46f3-8bef-89b1839038b7]
-padding=4
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+padding=10
+tiles={"layoutDirection":"horizontal","tiles":[{"width":1}]}
 
 [Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][8f58f010-c74d-4510-b5f9-0c6afb151056]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][e35054d8-f5bc-446c-8ae9-867b4a890ec2]
-padding=4
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+padding=10
+tiles={"layoutDirection":"horizontal","tiles":[{"width":1}]}
 
 [Tiling][7350cfdc-f6b5-4eba-a36f-4d05266c0866][46deb3ee-e25d-46f3-8bef-89b1839038b7]
 padding=4
