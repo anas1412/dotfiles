@@ -16,3 +16,7 @@ alias anime="curd -rofi -image-preview"
 function ai
     opencode run -m opencode/big-pickle $argv
 end
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/blackbox/.local/bin" $PATH

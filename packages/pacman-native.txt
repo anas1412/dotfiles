@@ -48,6 +48,7 @@ cantarell-fonts
 char-white
 chwd
 cpupower
+cronie
 cryptsetup
 device-mapper
 diffutils

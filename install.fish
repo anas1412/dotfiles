@@ -19,6 +19,26 @@ function await_enter
     read -P "Press Enter to continue..."
 end
 
+function ensure_cron
+    # Verify crontab is available, install cronie if missing (Arch only)
+    if not type -q crontab
+        echo "crontab not found – installing cronie..."
+        # Install cronie via pacman (requires sudo)
+        sudo pacman -Sy --needed cronie
+        and echo "Enabling and starting cronie.service"
+        and sudo systemctl enable --now cronie.service
+        or begin
+            echo "Failed to install cronie. Please install it manually and re‑run the installer."
+            exit 1
+        end
+    end
+    # Ensure the daemon is running
+    if not systemctl is-active --quiet cronie.service
+        sudo systemctl start cronie.service
+    end
+    echo "Cron is ready."
+end
+
 # ── Restore submenu ──────────────────────────
 
 function restore_menu
@@ -132,6 +152,36 @@ function maintenance_menu
     end
 end
 
+function install_cron_jobs
+    # Verify and install cronie if missing
+    ensure_cron
+
+    # Fixed schedule: run daily at midnight
+    set cron_time "0 0 * * *"
+
+    # Backup command – run the dotfiles backup script with fish
+    set exec_cmd "fish $HOME/dotfiles/scripts/backup.fish"
+
+    # Backup current crontab (if any)
+    set backup "$HOME/.dotfiles_cron_backup"
+    crontab -l > $backup 2>/dev/null
+
+    # Build the final cron line with logging
+    set cron_line "$cron_time $exec_cmd >> $HOME/dotfiles-cron.log 2>&1"
+
+    # Safely merge: get existing crontab, remove any older dotfiles backup job to avoid duplicates, and append the new one
+    set -l existing_cron (crontab -l 2>/dev/null | grep -v "backup.fish")
+    
+    begin
+        for line in $existing_cron
+            echo $line
+        end
+        echo $cron_line
+    end | crontab -
+
+    echo "Installed cron job for dotfiles backup."
+end
+
 # ── Extras submenu ──────────────────────────
 
 function extras_menu
@@ -153,12 +203,8 @@ function extras_menu
                 await_enter
             case "3) Install Auto Backup Timer"
                 echo ""
-                echo "Installing systemd backup timer..."
-                cp systemd/dotfiles-backup.service systemd/dotfiles-backup.timer ~/.config/systemd/user/
-                and systemctl --user daemon-reload
-                and systemctl --user enable --now dotfiles-backup.timer
-                and echo "Done. Timer runs daily at midnight."
-                or echo "Failed — check if ~/.config/systemd/user/ exists"
+                echo "Installing cron backup job..."
+                install_cron_jobs
                 await_enter
             case "0) Back to main menu"
                 return
