@@ -2,7 +2,7 @@
 
 **Tokyo Night** on Arch (CachyOS) + KDE Plasma 6 / Wayland. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-<!-- screenshot -->
+![Tokyo Night desktop](screenshot.png)
 
 ## Theme
 
