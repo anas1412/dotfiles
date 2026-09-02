@@ -30,11 +30,10 @@ Active=true
 [Plugins]
 aeroglideEnabled=true
 aeroshell-thumbnailsEnabled=true
-blurEnabled=false
+blurEnabled=true
 dialogparentEnabled=false
 dimscreenaeroEnabled=true
 fadingpopupsaeroEnabled=true
-glassEnabled=true
 karouselEnabled=false
 krohnkiteEnabled=false
 launchfeedbackEnabled=true
