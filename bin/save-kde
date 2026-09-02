@@ -13,8 +13,29 @@ done
 
 # Kvantum: active theme selection + any locally installed themes
 [ -f "$HOME/.config/Kvantum/kvantum.kvconfig" ] && cp "$HOME/.config/Kvantum/kvantum.kvconfig" "$REPO/kde/Kvantum/"
-for d in "$HOME"/.config/Kvantum/*/; do
-  [ -d "$d" ] && cp -a "$d" "$REPO/kde/Kvantum/" && echo "  Kvantum/$(basename "$d")"
+# Only the active Kvantum theme — the rest are third-party downloads
+ACTIVE=$(sed -n 's/^theme=//p' "$HOME/.config/Kvantum/kvantum.kvconfig" 2>/dev/null | head -1)
+if [ -n "$ACTIVE" ] && [ -d "$HOME/.config/Kvantum/$ACTIVE" ]; then
+  rm -rf "$REPO/kde/Kvantum/$ACTIVE"
+  cp -a "$HOME/.config/Kvantum/$ACTIVE" "$REPO/kde/Kvantum/" && echo "  Kvantum/$ACTIVE (active)"
+fi
+
+# GTK theming — Plasma drives GTK apps through these
+mkdir -p "$REPO/kde/gtk"
+for f in gtk-3.0/settings.ini gtk-4.0/settings.ini xsettingsd/xsettingsd.conf; do
+  if [ -f "$HOME/.config/$f" ]; then
+    mkdir -p "$REPO/kde/gtk/$(dirname "$f")"
+    cp "$HOME/.config/$f" "$REPO/kde/gtk/$f" && echo "  gtk/$f"
+  fi
 done
+[ -f "$HOME/.gtkrc-2.0" ] && cp "$HOME/.gtkrc-2.0" "$REPO/kde/gtk/gtkrc-2.0" && echo "  gtk/gtkrc-2.0"
+
+# Installed theme packages: record names only. These are large third-party
+# downloads, not your config — vendoring them would bloat the repo.
+if [ -d "$HOME/.local/share/plasma" ]; then
+  find "$HOME/.local/share/plasma" -maxdepth 2 -mindepth 2 -printf '%P\n' \
+    | grep -v '\.part$' | sort > "$REPO/kde/installed-themes.txt"
+  echo "  installed-themes.txt ($(wc -l < "$REPO/kde/installed-themes.txt") entries)"
+fi
 
 echo "KDE snapshot updated. Review with: git -C \"$REPO\" diff kde/"

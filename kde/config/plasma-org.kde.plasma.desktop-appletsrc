@@ -21,7 +21,7 @@ DialogHeight=777
 DialogWidth=1058
 
 [Containments][859][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/blackbox/Pictures/walls-catppuccin-mocha/flower-field.jpg
+Image=file:///home/blackbox/Pictures/walls-catppuccin-mocha/tank.jpg
 SlideInterval=300
 SlidePaths=/home/blackbox/Pictures/walls-catppuccin-mocha/
 
@@ -39,8 +39,8 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][860][Applets][861][Configuration]
-popupHeight=493
-popupWidth=613
+popupHeight=509
+popupWidth=647
 
 [Containments][860][Applets][861][Configuration][ConfigDialog]
 DialogHeight=630
@@ -66,7 +66,7 @@ DialogWidth=810
 [Containments][860][Applets][863][Configuration][General]
 groupingStrategy=0
 indicateAudioStreams=false
-launchers=applications:systemsettings.desktop,preferred://filemanager,preferred://browser
+launchers=preferred://filemanager,preferred://browser,applications:discord.desktop,applications:com.anthropic.Claude.desktop,applications:brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,applications:mattermost-desktop.desktop
 
 [Containments][860][Applets][864]
 immutability=1
@@ -183,5 +183,5 @@ DialogWidth=810
 AppletOrder=861;862;863;864;865;878
 
 [ScreenMapping]
-itemsOnDisabledScreens=1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,6,desktop:/Awaken-Fox-Within-pdf-version-english.epub,desktop:/brave-agpcmaaphpdakndlmjpmlidoipfoenob-Default.desktop,desktop:/calisthenics-starter.md,desktop:/Peter Daniel Andrei - How Highly Effective People Speak_ How High Performers Use Psychology to Influence With Ease (Speak for Success Book 1) (2020\\, Speak for Success Press) - libgen.li.pdf,desktop:/BLACKBOX Last Spring - COVER - EXTRA.pdf,desktop:/HOTw5wrWwAAtNX2.jpeg
-screenMapping=desktop:/gateway-cutover.html,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/stuff,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/gateway-cutover.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36
+itemsOnDisabledScreens=1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,6,desktop:/BLACKBOX Last Spring - COVER - EXTRA.pdf,desktop:/Awaken-Fox-Within-pdf-version-english.epub,desktop:/HOTw5wrWwAAtNX2.jpeg,desktop:/brave-agpcmaaphpdakndlmjpmlidoipfoenob-Default.desktop,desktop:/Peter Daniel Andrei - How Highly Effective People Speak_ How High Performers Use Psychology to Influence With Ease (Speak for Success Book 1) (2020\\, Speak for Success Press) - libgen.li.pdf,desktop:/calisthenics-starter.md
+screenMapping=desktop:/gateway-cutover.html,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/MR-prod-iolb-outage.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/staging-inventory.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/dns-changes-needed.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/DeU4nOnb_RHVq0l4HZVHjQ.mp4,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/stuff,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/gateway-cutover.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36

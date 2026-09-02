@@ -9,7 +9,7 @@ PaintAsTranslucent=true
 WindowClasses=io.missioncenter.MissionCenter\nmissioncenter\nMissionCenter
 
 [Effect-blur]
-BlurStrength=12
+BlurStrength=6
 NoiseStrength=3
 Saturation=100
 
@@ -35,11 +35,10 @@ Active=true
 [Plugins]
 aeroglideEnabled=true
 aeroshell-thumbnailsEnabled=true
-blurEnabled=false
+blurEnabled=true
 dialogparentEnabled=false
 dimscreenaeroEnabled=true
 fadingpopupsaeroEnabled=true
-glassEnabled=true
 karouselEnabled=false
 krohnkiteEnabled=false
 launchfeedbackEnabled=true
@@ -106,3 +105,5 @@ XwaylandEisNoPromptApps=python,python
 [org.kde.kdecoration2]
 ButtonsOnLeft=M
 ButtonsOnRight=H_IAX
+library=org.kde.kwin.aurorae.v2
+theme=__aurorae__svg__TokyoNight

@@ -158,6 +158,7 @@ AnimationDurationFactor=0.75
 LookAndFeelPackage=com.github.Jayy-Dev.Plasma.Tokyo.Night
 contrast=4
 frameContrast=0.2
+widgetStyle=kvantum-dark
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -182,9 +183,6 @@ BinaryUnitDialect=1
 [PreviewSettings]
 EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
-
-[Sounds]
-Theme=Windows 7
 
 [WM]
 activeBackground=26,27,38
