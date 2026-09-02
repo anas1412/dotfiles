@@ -3,11 +3,6 @@ Id_1=41adafeb-7400-44b8-85a4-cf94a94a8f66
 Number=1
 Rows=1
 
-[Effect-aeroglassblur]
-EnableTransparency=true
-PaintAsTranslucent=true
-WindowClasses=io.missioncenter.MissionCenter\nmissioncenter\nMissionCenter
-
 [Effect-blur]
 BlurStrength=6
 NoiseStrength=3
@@ -35,22 +30,19 @@ Active=true
 [Plugins]
 aeroglideEnabled=true
 aeroshell-thumbnailsEnabled=true
-blurEnabled=true
+blurEnabled=false
 dialogparentEnabled=false
 dimscreenaeroEnabled=true
 fadingpopupsaeroEnabled=true
+glassEnabled=true
 karouselEnabled=false
 krohnkiteEnabled=false
 launchfeedbackEnabled=true
-libkwin_effect_smodsnapEnabled=true
 loginaeroEnabled=true
 magnetileEnabled=false
 overviewEnabled=false
 screenedgeEnabled=false
 shakecursorEnabled=false
-smodglowEnabled=true
-smodpeekeffectEnabled=true
-smodpeekscriptEnabled=true
 squashaeroEnabled=true
 startupfeedbackEnabled=false
 

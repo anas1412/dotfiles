@@ -1,0 +1,17 @@
+Tokyonight-Dark GTK3: remove GTK4-only 'border-spacing' property.
+
+GTK3 rejects it with:
+  Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name
+
+and falls back to unstyled Adwaita — GTK3 apps render light instead of dark.
+
+Upstream: tokyonight-gtk-theme-git
+Fix applied to a user-level copy at ~/.themes/Tokyonight-Dark (shadows /usr/share).
+
+    cp -a /usr/share/themes/Tokyonight-Dark ~/.themes/
+    sed -i '/^\s*border-spacing:/d' \
+      ~/.themes/Tokyonight-Dark/gtk-3.0/gtk.css \
+      ~/.themes/Tokyonight-Dark/gtk-3.0/gtk-dark.css
+
+Re-apply after the package updates, since the user copy will be stale.
+Verify with:  GTK_THEME=Tokyonight-Dark <some-gtk3-app>   (no stderr = clean)

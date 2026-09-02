@@ -478,7 +478,3 @@ take-screenshot=Ctrl+Print
 
 [services][org.kde.krunner.desktop]
 _launch=none
-
-[services][org.kde.spectacle.desktop]
-CurrentMonitorScreenShot=none
-OpenWithoutScreenshot=none
