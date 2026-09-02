@@ -73,5 +73,4 @@ Only KDE and packages need an explicit `save` step first.
 
 ## Notes
 
-- `config/opencode/opencode.json` has `"apiKey": "sk_9router"` — a placeholder for a service on `127.0.0.1`, not a real credential.
 - Terminal font is JetBrainsMono Nerd Font Mono. Without a Nerd Font installed, fastfetch icons render blank.
