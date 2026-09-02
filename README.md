@@ -1,6 +1,22 @@
 # dotfiles
 
-Arch (CachyOS) + KDE Plasma 6 on Wayland. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
+**Tokyo Night** on Arch (CachyOS) + KDE Plasma 6 / Wayland. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
+
+<!-- screenshot -->
+
+## Theme
+
+| Layer | Value |
+|---|---|
+| Palette | Tokyo Night |
+| Qt / apps | Kvantum — `Kvantum-Tokyo-Night` |
+| Window blur | `kwin-effects-glass` (force blur, rounded corners, refraction) |
+| UI font | Noto Sans 10 |
+| Mono font | JetBrainsMono Nerd Font Mono 10 |
+| Terminal | kitty |
+| Shell | fish + pure prompt |
+
+Core colors: `#7AA2F7` blue · `#7DCFFF` cyan · `#BB9AF7` purple · `#73DACA` teal · `#9ECE6A` green · `#C0CAF5` fg
 
 ## Layout
 
