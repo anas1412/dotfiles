@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Copy the repo's KDE snapshot back onto this machine. Log out afterwards.
+set -euo pipefail
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+[ -d "$REPO/kde/config" ] || { echo "No KDE snapshot in repo."; exit 1; }
+
+STAMP="$HOME/.config/kde-backup-$(date +%Y%m%d-%H%M%S)"
+mkdir -p "$STAMP"
+for src in "$REPO"/kde/config/*; do
+  f="$(basename "$src")"
+  [ -f "$HOME/.config/$f" ] && cp "$HOME/.config/$f" "$STAMP/"
+  cp "$src" "$HOME/.config/$f" && echo "  $f"
+done
+
+mkdir -p "$HOME/.config/Kvantum"
+cp -a "$REPO"/kde/Kvantum/. "$HOME/.config/Kvantum/" 2>/dev/null || true
+
+echo
+echo "Restored. Previous configs backed up to: $STAMP"
+echo "Log out and back in to apply."

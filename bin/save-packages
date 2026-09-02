@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Record installed packages so a fresh machine can be rebuilt.
+set -euo pipefail
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+mkdir -p "$REPO/packages"
+
+pacman -Qqen > "$REPO/packages/pacman-native.txt"   # from official repos
+pacman -Qqem > "$REPO/packages/pacman-foreign.txt"  # AUR / local
+command -v flatpak >/dev/null && flatpak list --app --columns=application > "$REPO/packages/flatpak.txt" || true
+
+echo "native:  $(wc -l < "$REPO/packages/pacman-native.txt")"
+echo "foreign: $(wc -l < "$REPO/packages/pacman-foreign.txt")"

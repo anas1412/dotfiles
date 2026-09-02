@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Snapshot live KDE config into the repo. Run after you deliberately change a theme.
+set -euo pipefail
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+FILES=(kdeglobals kwinrc plasmarc dolphinrc kcminputrc konsolerc kglobalshortcutsrc
+       kwinrulesrc mimeapps.list katerc ksmserverrc kscreenlockerrc
+       plasma-org.kde.plasma.desktop-appletsrc)
+
+mkdir -p "$REPO/kde/config" "$REPO/kde/Kvantum"
+for f in "${FILES[@]}"; do
+  [ -f "$HOME/.config/$f" ] && cp "$HOME/.config/$f" "$REPO/kde/config/" && echo "  $f"
+done
+
+# Kvantum: active theme selection + any locally installed themes
+[ -f "$HOME/.config/Kvantum/kvantum.kvconfig" ] && cp "$HOME/.config/Kvantum/kvantum.kvconfig" "$REPO/kde/Kvantum/"
+for d in "$HOME"/.config/Kvantum/*/; do
+  [ -d "$d" ] && cp -a "$d" "$REPO/kde/Kvantum/" && echo "  Kvantum/$(basename "$d")"
+done
+
+echo "KDE snapshot updated. Review with: git -C \"$REPO\" diff kde/"

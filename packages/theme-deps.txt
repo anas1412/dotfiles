@@ -1,2 +1,1 @@
-breeze-icons
-capitaine-cursors
+aerothemeplasma-icons-git

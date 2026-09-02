@@ -1,0 +1,29 @@
+[window]
+padding = { x = 15, y = 15 }
+decorations = "Full"
+opacity = 0.55
+blur = true
+
+[font]
+size = 11
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[window.dimensions]
+columns = 95
+lines = 28
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

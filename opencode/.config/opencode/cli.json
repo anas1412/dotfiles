@@ -1,0 +1,36 @@
+{
+  "theme": {
+    "name": "system",
+    "mode": "system"
+  },
+  "diffs": {
+    "wrap": "word",
+    "view": "auto"
+  },
+  "prompt": {
+    "paste": "full",
+    "image_preview": true
+  },
+  "session": {
+    "sidebar": "hide",
+    "scrollbar": true,
+    "thinking": "hide",
+    "grouping": "auto",
+    "markdown": "rendered",
+    "image_preview": true,
+    "new_location": "launch"
+  },
+  "animations": true,
+  "tabs": {
+    "layout": "horizontal",
+    "enabled": true,
+    "scope": "cwd"
+  },
+  "attention": {
+    "enabled": true
+  },
+  "terminal": {
+    "title": true,
+    "copy_on_select": true
+  }
+}

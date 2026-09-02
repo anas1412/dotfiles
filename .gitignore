@@ -1,7 +1,23 @@
-# OpenAgent / OpenCode AI configuration
+# Backups and scratch
+*.bak
+*.bak-*
+*.bak.*
+*BACKUP
+*.log
+*.tar.gz
+
+# Dependencies
+node_modules/
+
+# Secrets — never commit these
+*.key
+*.pem
+.env
+.env.*
+
+# OS junk
+.DS_Store
 .opencode/
 
-# macOS junk
-.DS_Store
-
-*.log
+# fish regenerates this; machine-specific paths
+fish/.config/fish/fish_variables

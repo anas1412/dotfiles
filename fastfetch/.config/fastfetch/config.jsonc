@@ -1,0 +1,133 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  // ── Tokyo Night ───────────────────────────────
+  //  blue   #7AA2F7    cyan   #7DCFFF
+  //  purple #BB9AF7    teal   #73DACA
+  //  green  #9ECE6A    orange #FF9E64
+  //  fg     #C0CAF5    muted  #565F89
+  // ──────────────────────────────────────────────
+
+  "logo": {
+    "source": "arch_small",
+    "padding": {
+      "top": 6,
+      "right": 6,
+      "left": 3
+    },
+    "color": {
+      "1": "#7AA2F7",
+      "2": "#BB9AF7"
+    }
+  },
+  "display": {
+    "separator": " → ",
+    "color": {
+      "keys": "#7AA2F7",
+      "title": "#7DCFFF",
+      "output": "#C0CAF5"
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "#7AA2F7",
+        "at": "#565F89",
+        "host": "#BB9AF7"
+      }
+    },
+    {
+      "type": "separator",
+      "string": "─"
+    },
+    // --- Software ---
+    {
+      "type": "os",
+      "key": "󰣇 OS",
+      "format": "CachyOS",
+      "keyColor": "#7AA2F7"
+    },
+    {
+      "type": "os",
+      "key": "󰌽 Base",
+      "format": "Arch Linux",
+      "keyColor": "#7DCFFF"
+    },
+    {
+      "type": "kernel",
+      "key": "󰘚 Kernel",
+      "keyColor": "#BB9AF7"
+    },
+    {
+      "type": "uptime",
+      "key": "󰅐 Uptime",
+      "keyColor": "#73DACA"
+    },
+    {
+      "type": "packages",
+      "key": "󰏗 Packages",
+      "keyColor": "#9ECE6A"
+    },
+    "break",
+    // --- Hardware ---
+    {
+      "type": "host",
+      "key": "󰍹 Host",
+      "keyColor": "#7AA2F7"
+    },
+    {
+      "type": "cpu",
+      "key": "󰻠 CPU",
+      "temp": true,
+      "format": "{1} {temperature}",
+      "keyColor": "#7DCFFF"
+    },
+    {
+      "type": "gpu",
+      "key": "󰢮 GPU",
+      "temp": true,
+      "format": "{2} {temperature}",
+      "keyColor": "#BB9AF7"
+    },
+    {
+      "type": "memory",
+      "key": "󰑭 Memory",
+      "keyColor": "#73DACA"
+    },
+    {
+      "type": "disk",
+      "key": "󰋊 Storage",
+      "keyColor": "#9ECE6A"
+    },
+    "break",
+    // --- Environment ---
+    {
+      "type": "shell",
+      "key": "󰆍 Shell",
+      "keyColor": "#7AA2F7"
+    },
+    {
+      "type": "de",
+      "key": "󰟀 DE",
+      "keyColor": "#7DCFFF"
+    },
+    {
+      "type": "wm",
+      "key": "󰖯 WM",
+      "keyColor": "#BB9AF7"
+    },
+    {
+      "type": "terminal",
+      "key": "󰞷 Terminal",
+      "keyColor": "#73DACA"
+    },
+    {
+      "type": "terminalfont",
+      "key": "󰛖 Font",
+      "keyColor": "#9ECE6A"
+    },
+    "break",
+    "colors"
+  ]
+}

@@ -1,0 +1,41 @@
+[Added Associations]
+application/json=org.gnome.gedit.desktop;
+application/x-docbook+xml=org.gnome.gedit.desktop;
+application/x-yaml=org.gnome.gedit.desktop;
+inode/directory=org.kde.dolphin.desktop;code.desktop;
+text/html=brave-origin.desktop;chromium.desktop;firefox.desktop;org.gnome.gedit.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop;okularApplication_txt.desktop;vim.desktop;micro.desktop;libreoffice-writer.desktop;org.kde.ghostwriter.desktop;
+text/markdown=org.kde.kwrite.desktop;org.kde.ghostwriter.desktop;org.kde.kate.desktop;okularApplication_md.desktop;okularApplication_txt.desktop;micro.desktop;vim.desktop;libreoffice-writer.desktop;
+text/plain=org.gnome.gedit.desktop;
+text/x-cmake=org.gnome.gedit.desktop;
+text/x-shellscript=org.kde.kwrite.desktop;code.desktop;kitty-open.desktop;vim.desktop;
+x-scheme-handler/http=brave-origin.desktop;
+x-scheme-handler/https=brave-origin.desktop;
+
+[Default Applications]
+application/json=org.gnome.gedit.desktop;
+application/x-docbook+xml=org.gnome.gedit.desktop;
+application/x-yaml=org.gnome.gedit.desktop;
+inode/directory=org.kde.dolphin.desktop;
+text/html=brave-origin.desktop;
+text/markdown=org.kde.kwrite.desktop;
+text/plain=org.gnome.gedit.desktop;
+text/x-cmake=org.gnome.gedit.desktop;
+text/x-shellscript=org.kde.kwrite.desktop;
+x-scheme-handler/antigravity=antigravity.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/hayase=linux-hayase-6.4.70-linux.desktop
+x-scheme-handler/hermes=Hermes.desktop
+x-scheme-handler/http=brave-origin.desktop;
+x-scheme-handler/https=brave-origin.desktop;
+x-scheme-handler/joplin=joplin-desktop.desktop
+x-scheme-handler/mailto=brave-origin.desktop
+x-scheme-handler/opencode=ai.opencode.desktop.desktop
+x-scheme-handler/podman-desktop=podman-desktop.desktop
+x-scheme-handler/t3code=t3code.desktop
+x-scheme-handler/ytmd=youtube-music-desktop-app.desktop
+x-scheme-handler/zcode=zcode.desktop
+x-scheme-handler/claude=com.anthropic.Claude.desktop
+x-scheme-handler/lens=lens.desktop
+
+[Removed Associations]
+text/x-shellscript=org.gnome.gedit.desktop;
