@@ -1,7 +1,6 @@
 ani-cli
 instagram-cli
 kind-bin
-kwin-effects-glass-git
 lens-bin
 libadwaita-without-adwaita
 opencode-bin
