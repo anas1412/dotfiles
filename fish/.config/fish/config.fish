@@ -31,3 +31,7 @@ fish_add_path $HOME/.grok/bin
 
 # opencode
 fish_add_path /home/blackbox/.opencode/bin
+
+# >>> railway initialize >>>
+source "$HOME/.railway/env.fish"
+# <<< railway initialize <<<

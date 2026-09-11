@@ -1,6 +1,16 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {},
+  "default_agent": "build",
+  "mcp": {
+    "railway": {
+      "command": [
+        "railway",
+        "mcp"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  },
   "model": "opencode/big-pickle",
-  "default_agent": "build"
+  "provider": {}
 }
