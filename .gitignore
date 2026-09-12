@@ -21,3 +21,6 @@ node_modules/
 
 # fish regenerates this; machine-specific paths
 fish/.config/fish/fish_variables
+
+# opencode installs these; regenerable, not config
+opencode/.config/opencode/skills/
