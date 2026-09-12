@@ -1,18 +1,16 @@
 [Desktops]
 Id_1=41adafeb-7400-44b8-85a4-cf94a94a8f66
-Number=1
+Id_2=aadf25ad-5216-4a23-b870-387e4689b031
+Id_3=0ada5190-1dce-437c-8025-d045d6cd656c
+Name_1=chill
+Name_2=work
+Number=3
 Rows=1
 
 [Effect-blur]
-BlurStrength=6
-NoiseStrength=3
+BlurStrength=4
+NoiseStrength=0
 Saturation=100
-
-[Effect-blurplus]
-EnableTransparency=true
-NoiseStrength=4
-PaintAsTranslucent=true
-WindowClasses=io.missioncenter.MissionCenter\nmissioncenter\nMissionCenter
 
 [Effect-overview]
 BorderActivate=9
@@ -21,7 +19,6 @@ BorderActivate=9
 Magnification=10
 
 [Effect-translucency]
-Inactive=93
 MoveResize=100
 
 [NightColor]
@@ -34,7 +31,6 @@ blurEnabled=true
 dialogparentEnabled=false
 dimscreenaeroEnabled=true
 fadingpopupsaeroEnabled=true
-karouselEnabled=false
 krohnkiteEnabled=false
 launchfeedbackEnabled=true
 loginaeroEnabled=true
@@ -55,6 +51,14 @@ tiledKeepBelow=false
 
 [TabBoxAlternative]
 LayoutName=flip3d
+
+[Tiling][0ada5190-1dce-437c-8025-d045d6cd656c][46deb3ee-e25d-46f3-8bef-89b1839038b7]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][0ada5190-1dce-437c-8025-d045d6cd656c][e35054d8-f5bc-446c-8ae9-867b4a890ec2]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][0d71e4d5-c2e3-4b5a-9ccb-59a33fb39aaa][46deb3ee-e25d-46f3-8bef-89b1839038b7]
 padding=4
@@ -87,6 +91,17 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][7350cfdc-f6b5-4eba-a36f-4d05266c0866][e35054d8-f5bc-446c-8ae9-867b4a890ec2]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][aadf25ad-5216-4a23-b870-387e4689b031][46deb3ee-e25d-46f3-8bef-89b1839038b7]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][aadf25ad-5216-4a23-b870-387e4689b031][e35054d8-f5bc-446c-8ae9-867b4a890ec2]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Windows]
+PerOutputVirtualDesktops=true
 
 [Xwayland]
 Scale=1

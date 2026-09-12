@@ -92,6 +92,7 @@ fwupd
 ghostwriter
 git
 github-cli
+glab
 glances
 go
 gradia
@@ -136,6 +137,7 @@ kvantum-qt5
 kwallet-pam
 kwalletmanager
 lact
+lazydocker
 lazygit
 less
 lib32-nvidia-utils
@@ -165,6 +167,7 @@ lsscsi
 lvm2
 man-db
 man-pages
+mattermost-desktop
 mdadm
 meld
 mesa-utils
@@ -201,6 +204,7 @@ paru
 pavucontrol
 perl
 phonon-qt6-vlc
+pinta
 pipewire-alsa
 pipewire-pulse
 pkgfile
@@ -217,9 +221,6 @@ plasma-wayland-protocols
 plocate
 plymouth
 plymouth-kcm
-podman
-podman-compose
-podman-desktop
 poppler-glib
 power-profiles-daemon
 powerdevil
@@ -248,12 +249,14 @@ snapper
 sof-firmware
 spectacle
 speedtest-cli
+stow
 sudo
 sunshine
 switcheroo-control
 sysfsutils
 systemctl-tui
 texinfo
+thermald
 tmux
 ttf-bitstream-vera
 ttf-dejavu
@@ -261,6 +264,7 @@ ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-meslo-nerd
 ttf-opensans
+tuxmanager
 ufw
 ufw-extras
 unrar

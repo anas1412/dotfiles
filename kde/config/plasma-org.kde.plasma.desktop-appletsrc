@@ -20,8 +20,14 @@ wallpaperplugin=org.kde.slideshow
 DialogHeight=777
 DialogWidth=1058
 
+[Containments][859][General]
+changedPositions={"desktop:/2026-09-05-ecp-cutover-handoff.md":["1920x1080","0","0"],"desktop:/Screenshot_20260904_000619.png":["1920x1080","0","1"],"desktop:/aaaaaaaaa":["1920x1080","0","0"],"desktop:/asia-3-years.html":["1920x1080","0","5"],"desktop:/telemetry-hub.html":["1920x1080","0","1"]}
+lastResolution=1920x1080
+positions={"1920x1080":["1","17","desktop:/TODO.md.tmp.404230.555b56d70a06","0","3","desktop:/763635df07a330f754976cadb70ec3b0.jpg","0","3","desktop:/TODO.md.tmp.404230.48c8345926d5","0","3","desktop:/TODO.md.tmp.267225.c5c3e37347df","0","0","desktop:/TODO.md.tmp.404230.bf80e8a9288d","0","3","desktop:/TODO.md.tmp.404230.b97be65f7f5c","0","3","desktop:/TODO.md.tmp.404230.741b53ede352","0","3","desktop:/TODO.md.tmp.253855.e6bb918ae731","0","0","desktop:/Unconfirmed 845209.crdownload","0","8","desktop:/TODO.md.tmp.404230.f342d0ad6a57","0","3","desktop:/asia-3-years.html","0","5","desktop:/Screenshot_20260904_000643.png","0","0","desktop:/TODO.md.tmp.404230.f4cbffcde735","0","3","desktop:/TODO.md.tmp.404230.e2cab8521101","0","3","desktop:/TODO.md.tmp.404230.3541bb4c1875","0","3","desktop:/TODO.md.tmp.404230.1e3b09c82378","0","3","desktop:/TODO.md.tmp.267225.f493b5bad5b0","0","0","desktop:/TODO.md.tmp.353163.bc91f777c1f7","0","1","desktop:/TODO.md.tmp.404230.ce6e1dc1fbaa","0","3","desktop:/TODO.md.tmp.404230.48e8f713675f","0","3","desktop:/TODO.md.tmp.232290.386e25a35a06","0","0","desktop:/TODO.md.tmp.404230.45ab176a3a4c","0","3","desktop:/TODO.md.tmp.404230.1a1e9a1088a5","0","3","desktop:/TODO.md.tmp.404230.bc0e736615b4","0","3","desktop:/TODO.md.tmp.232290.7ad67d32942b","0","0","desktop:/aaaaaaaaa","0","0","desktop:/TODO.md.tmp.404230.acc19e7cae87","0","3","desktop:/TODO.md.tmp.404230.70efc68bb8f9","0","3","desktop:/TODO.md.tmp.253855.04269a70f9ce","0","0","desktop:/2026-09-05-ecp-cutover-handoff.md","0","0","desktop:/TODO.md.tmp.232290.c3860e4561c5","0","0","desktop:/Unconfirmed 20694.crdownload","0","2","desktop:/TODO.md.tmp.404230.fa0e0346cc79","0","3","desktop:/TODO.md.tmp.404230.13af1fcc1cec","0","3","desktop:/message.txt","0","8","desktop:/TODO.md.tmp.404230.b236da9f4e09","0","3","desktop:/TODO.md.tmp.404230.397be61c41d4","0","3","desktop:/TODO.md.tmp.267225.3adbb878ee24","0","0","desktop:/TODO.md.tmp.404230.c83cd480c077","0","3","desktop:/TODO.md.tmp.232290.2ced3201ec9d","0","0","desktop:/TODO.md.tmp.404230.e53a859e001e","0","3","desktop:/TODO.md.tmp.404230.2f31951a8d15","0","3","desktop:/TODO.md.tmp.404230.4a68741a8166","0","3","desktop:/telemetry-hub.html","0","1","desktop:/TODO.md.tmp.404230.4fc48f62e513","0","3","desktop:/TODO.md.tmp.404230.ce880ed84bd7","0","3","desktop:/TODO.md.tmp.404230.8bc89d48739c","0","3","desktop:/TODO.md.tmp.404230.1c2db4ebd928","0","3","desktop:/TODO.md.tmp.404230.aaa2fa259291","0","3","desktop:/T3-Code-0.0.40-x86_64.appimage","0","2","desktop:/TODO.md.tmp.404230.8773c8d8183c","0","3","desktop:/TODO.md.tmp.404230.c126e77a28cd","0","3","desktop:/TODO.md.tmp.404230.2d443a08ae96","0","3","desktop:/TODO.md.tmp.232290.4af5e5287aca","0","0","desktop:/yyJCdOhS1viOnUcoxZi55w.mp4","0","1","desktop:/nydhal-1530-report.html","0","4","desktop:/TODO.md.tmp.404230.205dd3425bc5","0","3","desktop:/TODO.md.tmp.404230.e8bd6f1a84d6","0","3","desktop:/TODO.md.tmp.404230.ae1f8cc80d12","0","3","desktop:/TODO.md.tmp.404230.b1f208846d75","0","3","desktop:/TODO.md.tmp.404230.3977fcf6fc95","0","3","desktop:/TODO.md.tmp.404230.e2a0de07dfac","0","3","desktop:/Screenshot_20260904_000619.png","0","1","desktop:/TODO.md.tmp.404230.ca07237b4ae9","0","3","desktop:/TODO.md.tmp.404230.23d69fbf10aa","0","3","desktop:/TODO.md.tmp.404230.5828557e9de2","0","3","desktop:/TODO.md.tmp.404230.7d6ccb54b0a6","0","3","desktop:/m_eJmozJdxstc8Xaj39XUQ.mp4","0","6"]}
+sortMode=-1
+
 [Containments][859][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/blackbox/Pictures/walls-catppuccin-mocha/tank.jpg
+Image=file:///home/blackbox/Pictures/walls-catppuccin-mocha/hollow.jpg
 SlideInterval=300
 SlidePaths=/home/blackbox/Pictures/walls-catppuccin-mocha/
 
@@ -50,10 +56,6 @@ DialogWidth=810
 favoritesPortedToKAstats=true
 icon=archlinux
 systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
-
-[Containments][860][Applets][862]
-immutability=1
-plugin=org.kde.plasma.pager
 
 [Containments][860][Applets][863]
 immutability=1
@@ -98,6 +100,9 @@ plugin=org.kde.plasma.keyboardlayout
 [Containments][860][Applets][865][Applets][869]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
+
+[Containments][860][Applets][865][Applets][869][Configuration][General]
+currentDetailsTab=details
 
 [Containments][860][Applets][865][Applets][870]
 immutability=1
@@ -179,9 +184,52 @@ use24hFormat=0
 DialogHeight=630
 DialogWidth=810
 
+[Containments][860][Applets][885]
+immutability=1
+plugin=org.kde.plasma.panelspacer
+
+[Containments][860][Applets][886]
+immutability=1
+plugin=org.kde.plasma.panelspacer
+
+[Containments][860][Applets][887]
+immutability=1
+plugin=com.mike.desktop
+
+[Containments][860][Applets][887][Configuration]
+popupHeight=400
+popupWidth=560
+
+[Containments][860][Applets][887][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][860][Applets][887][Configuration][General]
+showWindowIndicator=false
+
 [Containments][860][General]
-AppletOrder=861;862;863;864;865;878
+AppletOrder=861;863;886;887;885;864;865;878
+
+[Containments][884]
+activityId=b7b6197a-d0ed-4314-b40f-b7eb95225a36
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.slideshow
+
+[Containments][884][General]
+changedPositions={"desktop:/MR-prod-iolb-outage.md":["1920x1080","0","6"],"desktop:/Screenshot_20260904_000619.png":["1920x1080","0","11"],"desktop:/TODO.md":["1920x1080","0","8"],"desktop:/dns-changes-needed.md":["1920x1080","0","2"],"desktop:/gateway-cutover.html":["1920x1080","0","3"],"desktop:/gateway-cutover.md":["1920x1080","0","4"],"desktop:/image.png":["1920x1080","0","5"],"desktop:/staging-inventory.md":["1920x1080","0","7"],"desktop:/stuff":["1920x1080","0","9"]}
+lastResolution=1920x1080
+positions={"1920x1080":["1","17","desktop:/763635df07a330f754976cadb70ec3b0.jpg","1","0","desktop:/telemetry-hub.html","0","14","desktop:/DeU4nOnb_RHVq0l4HZVHjQ.mp4","0","1","desktop:/T3-Code-0.0.40-x86_64.appimage","0","0","desktop:/Screenshot_20260904_000643.png","0","10","desktop:/asia-3-years.html","0","8","desktop:/yyJCdOhS1viOnUcoxZi55w.mp4","0","0","desktop:/nydhal-1530-report.html","0","15","desktop:/MR-prod-iolb-outage.md","0","6","desktop:/staging-inventory.md","0","7","desktop:/dns-changes-needed.md","0","2","desktop:/aaaaaaaaa","0","12","desktop:/stuff","0","9","desktop:/Screenshot_20260904_000619.png","0","11","desktop:/gateway-cutover.md","0","4","desktop:/2026-09-05-ecp-cutover-handoff.md","0","13","desktop:/gateway-cutover.html","0","3","desktop:/message.txt","1","1","desktop:/m_eJmozJdxstc8Xaj39XUQ.mp4","0","16","desktop:/image.png","0","5","desktop:/TODO.md","0","8"]}
+sortMode=-1
+
+[Containments][884][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/blackbox/Pictures/walls-catppuccin-mocha/sunlit-ruins.png
+SlideInterval=300
+SlidePaths=/home/blackbox/Pictures/walls-catppuccin-mocha/
 
 [ScreenMapping]
-itemsOnDisabledScreens=1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,6,desktop:/BLACKBOX Last Spring - COVER - EXTRA.pdf,desktop:/Awaken-Fox-Within-pdf-version-english.epub,desktop:/HOTw5wrWwAAtNX2.jpeg,desktop:/brave-agpcmaaphpdakndlmjpmlidoipfoenob-Default.desktop,desktop:/Peter Daniel Andrei - How Highly Effective People Speak_ How High Performers Use Psychology to Influence With Ease (Speak for Success Book 1) (2020\\, Speak for Success Press) - libgen.li.pdf,desktop:/calisthenics-starter.md
-screenMapping=desktop:/gateway-cutover.html,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/MR-prod-iolb-outage.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/staging-inventory.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/dns-changes-needed.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/DeU4nOnb_RHVq0l4HZVHjQ.mp4,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/stuff,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/gateway-cutover.md,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36
+itemsOnDisabledScreens=
+screenMapping=desktop:/Peter Daniel Andrei - How Highly Effective People Speak_ How High Performers Use Psychology to Influence With Ease (Speak for Success Book 1) (2020\\, Speak for Success Press) - libgen.li.pdf,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/staging-inventory.md,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/aaaaaaaaa,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/Screenshot_20260904_000643.png,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/dns-changes-needed.md,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/Awaken-Fox-Within-pdf-version-english.epub,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/MR-prod-iolb-outage.md,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/gateway-cutover.html,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/image.png,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/HOTw5wrWwAAtNX2.jpeg,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/BLACKBOX Last Spring - COVER - EXTRA.pdf,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/stuff,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/gateway-cutover.md,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/Screenshot_20260904_000619.png,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/telemetry-hub.html,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/brave-agpcmaaphpdakndlmjpmlidoipfoenob-Default.desktop,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/T3-Code-0.0.40-x86_64.appimage,0,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/DeU4nOnb_RHVq0l4HZVHjQ.mp4,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36,desktop:/calisthenics-starter.md,1,b7b6197a-d0ed-4314-b40f-b7eb95225a36

@@ -1,3 +1,5 @@
+MenuBar=Disabled
+
 [General]
 OpenExternallyCalledFolderInNewTab=true
 RememberOpenedTabs=false
