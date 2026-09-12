@@ -1,4 +1,5 @@
 ani-cli
+cliamp-bin
 instagram-cli
 kind-bin
 kwin-effects-glass-git

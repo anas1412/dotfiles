@@ -237,6 +237,7 @@ rebuild-detector
 reflector
 ripgrep
 rmpc
+rofi
 rsync
 s-nail
 sddm
