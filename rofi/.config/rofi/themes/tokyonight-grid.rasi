@@ -1,0 +1,85 @@
+/* Tokyo Night grid - generated from ~/.local/share/color-schemes/TokyoNight.colors
+   Colours match your KDE scheme exactly, so rofi reads as part of the desktop. */
+
+* {
+    bg:        #1a1b26;   /* Window BackgroundNormal   */
+    bg-alt:    #16161d;   /* BackgroundAlternate       */
+    bg-button: #2c2d37;   /* Button BackgroundNormal   */
+    fg:        #d7dae0;   /* ForegroundNormal          */
+    accent:    #a4b9ef;   /* DecorationFocus           */
+    green:     #9dddcb;   /* BackgroundAlternate accent*/
+    sel-fg:    #14151e;   /* Selection ForegroundNormal*/
+
+    background-color: transparent;
+    text-color:       @fg;
+    font:             "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    width:            1000px;
+    border:           2px;
+    border-color:     @accent;
+    border-radius:    16px;
+    background-color: @bg;
+    padding:          24px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing:  20px;
+}
+
+inputbar {
+    children:         [ prompt, entry ];
+    background-color: @bg-alt;
+    border-radius:    10px;
+    padding:          12px 16px;
+    spacing:          12px;
+}
+
+prompt {
+    text-color: @accent;
+    font:       "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    placeholder:            "Search applications";
+    placeholder-color:      @bg-button;
+    cursor:                 text;
+}
+
+listview {
+    columns:      6;
+    lines:        4;
+    fixed-height: true;
+    cycle:        true;
+    scrollbar:    false;
+    spacing:      10px;
+}
+
+element {
+    orientation:   vertical;
+    padding:       14px 8px;
+    border-radius: 12px;
+    spacing:       8px;
+    cursor:        pointer;
+}
+
+element-icon {
+    size:             56px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    text-color:       inherit;
+}
+
+element normal.normal   { background-color: transparent; text-color: @fg; }
+element alternate.normal { background-color: transparent; text-color: @fg; }
+element selected.normal  { background-color: @accent;     text-color: @sel-fg; }
+element.active           { text-color: @green; }
