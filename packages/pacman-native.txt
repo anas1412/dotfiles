@@ -250,6 +250,7 @@ snapper
 sof-firmware
 spectacle
 speedtest-cli
+spotify-launcher
 stow
 sudo
 sunshine

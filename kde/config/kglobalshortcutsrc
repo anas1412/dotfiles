@@ -462,6 +462,7 @@ activate widget 709=Alt+F1,none,Activate Application Launcher Widget
 activate widget 737=none,none,Activate Seven Start Widget
 activate widget 74=none,none,Activate Application Menu Widget
 activate widget 78=none,none,Activate Application Launcher Widget
+activate widget 889=none,none,Activate Application Dashboard Widget
 clear history=none,none,Clear Notification History
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
@@ -487,7 +488,3 @@ take-screenshot=Ctrl+Print
 
 [services][org.kde.krunner.desktop]
 _launch=none
-
-[services][org.kde.spectacle.desktop]
-CurrentMonitorScreenShot=none
-OpenWithoutScreenshot=none

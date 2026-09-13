@@ -1,11 +1,14 @@
 ani-cli
 cliamp-bin
+fastpotify-bin
 instagram-cli
 kind-bin
+klassy-bin
 kwin-effects-glass-git
 lens-bin
 libadwaita-without-adwaita
 opencode-bin
+plasma6-applets-panel-colorizer
 tokyonight-gtk-theme-git
 ttf-ms-fonts
 visual-studio-code-bin
