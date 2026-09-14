@@ -7,7 +7,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 
 command -v stow >/dev/null || { echo "stow is not installed:  sudo pacman -S stow"; exit 1; }
 
-PACKAGES=(fish zsh kitty alacritty rofi fastfetch opencode)
+PACKAGES=(fish zsh kitty alacritty fastfetch opencode)
 [ $# -gt 0 ] && PACKAGES=("$@")
 
 for p in "${PACKAGES[@]}"; do

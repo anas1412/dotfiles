@@ -1,9 +1,0 @@
-configuration {
-    modes:              "drun";
-    show-icons:         true;
-    icon-theme:         "breeze";
-    drun-display-format: "{name}";
-    display-drun:       "";
-    drun-match-fields:  "name,generic,exec,categories,keywords";
-}
-@theme "~/.config/rofi/themes/tokyonight-grid.rasi"
