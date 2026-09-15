@@ -141,6 +141,27 @@ MoveZoomLeft=none,none,Move Zoomed Area to Left
 MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=Meta+W,Meta+W,Toggle Overview
+PoloniumActivateAbove=Meta+K,none,Polonium: Activate Above
+PoloniumActivateBelow=Meta+J,none,Polonium: Activate Below
+PoloniumActivateLeft=Meta+H,none,Polonium: Activate Left
+PoloniumActivateRight=Meta+L,none,Polonium: Activate Right
+PoloniumCycleEngine=Meta+|,none,Polonium: Cycle Engine
+PoloniumPlaceAbove=Meta+Shift+K,none,Polonium: Place Window Above
+PoloniumPlaceBelow=Meta+Shift+J,none,Polonium: Place Window Below
+PoloniumPlaceLeft=Meta+Shift+H,none,Polonium: Place Window Left
+PoloniumPlaceRight=Meta+Shift+L,none,Polonium: Place Window Right
+PoloniumResizeDown=Meta+Ctrl+J,none,Polonium: Resize Tile Down
+PoloniumResizeLeft=Meta+Ctrl+H,none,Polonium: Resize Tile Left
+PoloniumResizeRight=Meta+Ctrl+L,none,Polonium: Resize Tile Right
+PoloniumResizeUp=Meta+Ctrl+K,none,Polonium: Resize Tile Up
+PoloniumSetEngineBTree=none,none,Polonium: Use Binary Tree Engine
+PoloniumSetEngineHalf=none,none,Polonium: Use Half Engine
+PoloniumSetEngineKWin=none,none,Polonium: Use KWin Engine
+PoloniumSetEnginePager=none,none,Polonium: Use Pager Engine
+PoloniumSetEnginePillars=none,none,Polonium: Use Pillars Engine
+PoloniumSetEngineThreeColumn=none,none,Polonium: Use Three Column Engine
+PoloniumToggleActiveTiling=Meta+Shift+Space,none,Polonium: Toggle Tiling on Active Window
+PoloniumToggleSettingsMenu=Meta+\\\\,none,Polonium: Toggle Settings Menu
 Setup Window Shortcut=none,none,Setup Window Shortcut
 Show Desktop=Meta+D,Meta+D,Peek at Desktop
 Switch One Desktop Down=Meta+Ctrl+Down,Meta+Ctrl+Down,Switch One Desktop Down
@@ -431,7 +452,7 @@ powerProfile=Battery\tMeta+B,Battery\tMeta+B,Switch Power Profile
 [plasmashell]
 Slideshow Wallpaper Next Image=none,none,Next Wallpaper Image
 _k_friendly_name=plasmashell
-activate application launcher=Meta\tAlt+F1,Meta\tAlt+F1,Activate Application Launcher
+activate application launcher=Alt+F1,Meta\tAlt+F1,Activate Application Launcher
 activate task manager entry 1=Meta+1,Meta+1,Activate Task Manager Entry 1
 activate task manager entry 10=none,none,Activate Task Manager Entry 10
 activate task manager entry 2=Meta+2,Meta+2,Activate Task Manager Entry 2
@@ -463,6 +484,7 @@ activate widget 737=none,none,Activate Seven Start Widget
 activate widget 74=none,none,Activate Application Menu Widget
 activate widget 78=none,none,Activate Application Launcher Widget
 activate widget 889=none,none,Activate Application Dashboard Widget
+activate widget 894=none,none,Activate Application Launcher Widget
 clear history=none,none,Clear Notification History
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
@@ -487,4 +509,8 @@ take-fullscreen-screenshot=none
 take-screenshot=Ctrl+Print
 
 [services][org.kde.krunner.desktop]
-_launch=none
+_launch=Meta
+
+[services][org.kde.spectacle.desktop]
+CurrentMonitorScreenShot=none
+OpenWithoutScreenshot=none

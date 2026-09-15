@@ -5,6 +5,7 @@ instagram-cli
 kind-bin
 klassy-bin
 kwin-effects-glass-git
+kwin-polonium
 lens-bin
 libadwaita-without-adwaita
 opencode-bin
