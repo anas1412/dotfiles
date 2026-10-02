@@ -134,6 +134,7 @@ ForegroundVisited=173,142,230
 
 [General]
 BrowserApplication=brave-origin-nightly.desktop
+ColorScheme=TokyoNight
 ColorSchemeHash=b97562e9308a74623cceab30d237ce2d67fb72a8
 TerminalApplication=kitty
 TerminalService=kitty.desktop
@@ -158,7 +159,7 @@ AnimationDurationFactor=0.75
 LookAndFeelPackage=com.github.Jayy-Dev.Plasma.Tokyo.Night
 contrast=4
 frameContrast=0.2
-widgetStyle=kvantum-dark
+widgetStyle=kvantum
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -187,7 +188,6 @@ MaximumRemoteSize=0
 [WM]
 activeBackground=26,27,38
 activeBlend=215,218,224
-activeFont=Noto Sans,10,-1,5,700,0,0,0,0,0,0,0,0,0,0,1,,0,0
 activeForeground=215,218,224
 inactiveBackground=26,27,38
 inactiveBlend=110,108,124

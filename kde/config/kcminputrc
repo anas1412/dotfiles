@@ -2,6 +2,7 @@
 NumLock=0
 
 [Libinput][1267][12525][ELAN0710:01 04F3:30ED Mouse]
+PointerAcceleration=0.000
 PointerAccelerationProfile=1
 
 [Libinput][1267][12525][ELAN0710:01 04F3:30ED Touchpad]
@@ -11,7 +12,10 @@ PointerAcceleration=0.000
 PointerAccelerationProfile=2
 
 [Libinput][4152][5920][SteelSeries SteelSeries Rival 310 eSports Mouse]
-PointerAcceleration=-0.200
+PointerAcceleration=-0.400
+PointerAccelerationProfile=1
+
+[Libinput][7247][52][SIGMACHIP Usb Mouse]
 PointerAccelerationProfile=1
 
 [Mouse]

@@ -10,12 +10,22 @@ Show Status Bar=true
 Show Tab Bar=true
 Show Url Nav Bar=true
 
+[KTextEditor Renderer]
+Animate Bracket Matching=false
+Auto Color Theme Selection=true
+Color Theme=Tokyo Night
+Line Height Multiplier=1
+Show Indentation Lines=false
+Show Whole Bracket Expression=false
+Text Font=monospace,9,-1,2,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
+Text Font Features=
+Word Wrap Marker=false
+
 [MainWindow]
 1920x1080 screen: Height=771
 1920x1080 screen: Width=944
-2 screens: Height=691
-2 screens: Width=857
-2 screens: Window-Maximized=true
+2 screens: Height=515
+2 screens: Width=890
 
 [filetree]
 editShade=68,57,85

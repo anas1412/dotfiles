@@ -1,0 +1,3 @@
+com.championpeak87.cosmic-ext-classic-menu
+dev.edfloreshz.CosmicTweaks
+io.github.TopiCsarno.YapCap

@@ -8,6 +8,7 @@ look-and-feel/Lain
 look-and-feel/Plasma-Overdose
 look-and-feel/zmcgrM-main
 plasmoids/com.mike.desktop
+plasmoids/org.muddyblack.aiUsageWidget
 wallpapers/com.plasma.wallpaper.wallhaven
 wallpapers/luisbocanegra.smart.video.wallpaper.reborn
 wallpapers/org.kde.rain
