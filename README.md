@@ -11,6 +11,7 @@
 | Palette | Tokyo Night |
 | Qt / apps | Kvantum — `Kvantum-Tokyo-Night` |
 | Window blur | `kwin-effects-glass` (force blur, rounded corners, refraction) |
+| Window decoration | Aurorae — `TokyoNight` |
 | UI font | Noto Sans 10 |
 | Mono font | JetBrainsMono Nerd Font Mono 10 |
 | Terminal | kitty |
@@ -28,10 +29,13 @@ kitty/.config/kitty/      ->  ~/.config/kitty/
 alacritty/.config/...     ->  ~/.config/alacritty/
 fastfetch/.config/...     ->  ~/.config/fastfetch/
 opencode/.config/...      ->  ~/.config/opencode/
+claude/.claude/skills/    ->  ~/.claude/skills/   (Claude Code skills, one link per skill)
 
 kde/                      KDE snapshot (copied, not symlinked)
 packages/                 installed package lists
-bin/                      helper scripts
+bin/                      helper scripts (save/restore KDE, save packages)
+scripts/                  standalone fish utilities (maintenance, bluetooth mic fix, ...)
+nixos/                    NixOS config generated from this machine — not used on Arch
 ```
 
 Stow symlinks these into place, so **the files in this repo are the live config**. Edit either side — they're the same file. No syncing, no drift.
@@ -88,5 +92,8 @@ git add -A && git commit -m "kitty: bump font size" && git push
 Only KDE and packages need an explicit `save` step first.
 
 ## Notes
+
+- `kwin-effects-glass` is a third-party KWin effect built against one exact KWin version. After any KWin update the blur and rounded corners vanish until it is rebuilt: `paru -S --rebuild kwin-effects-glass-git`, then log out and back in.
+- `claude/` holds the [taste-skill](https://github.com/Leonxlnx/taste-skill) design skills. Only those are tracked — `~/.claude` also contains credentials, so never stow it whole.
 
 - Terminal font is JetBrainsMono Nerd Font Mono. Without a Nerd Font installed, fastfetch icons render blank.
