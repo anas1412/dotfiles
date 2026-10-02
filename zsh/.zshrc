@@ -33,3 +33,10 @@ export PATH="$HOME/.opencode/bin:$PATH"
 
 # railway
 [ -f "$HOME/.railway/env" ] && source "$HOME/.railway/env"
+
+export PATH=$PATH:/home/blackbox/.spicetify
+
+# kubeconfig: every yml/yaml in ~/.kube, merged
+kc=(~/.kube/config(N) ~/.kube/*.yml(N) ~/.kube/*.yaml(N))
+export KUBECONFIG=${(j.:.)kc}
+unset kc
