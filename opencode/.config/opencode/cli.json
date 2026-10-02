@@ -31,6 +31,6 @@
   },
   "terminal": {
     "title": true,
-    "copy_on_select": true
+    "copy": "select"
   }
 }
