@@ -2,10 +2,10 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
   // ── Tokyo Night ───────────────────────────────
-  //  blue   #7AA2F7    cyan   #7DCFFF
-  //  purple #BB9AF7    teal   #73DACA
-  //  green  #9ECE6A    orange #FF9E64
-  //  fg     #C0CAF5    muted  #565F89
+  //  blue   #9DAAD0    cyan   #ED93A9
+  //  purple #F0B799    teal   #D9D6B2
+  //  green  #C7A0B8    orange #FF9E64
+  //  fg     #D2D5E0    muted  #565F89
   // ──────────────────────────────────────────────
 
   "logo": {
@@ -16,25 +16,25 @@
       "left": 3
     },
     "color": {
-      "1": "#7AA2F7",
-      "2": "#BB9AF7"
+      "1": "#9DAAD0",
+      "2": "#F0B799"
     }
   },
   "display": {
     "separator": " → ",
     "color": {
-      "keys": "#7AA2F7",
-      "title": "#7DCFFF",
-      "output": "#C0CAF5"
+      "keys": "#9DAAD0",
+      "title": "#ED93A9",
+      "output": "#D2D5E0"
     }
   },
   "modules": [
     {
       "type": "title",
       "color": {
-        "user": "#7AA2F7",
+        "user": "#9DAAD0",
         "at": "#565F89",
-        "host": "#BB9AF7"
+        "host": "#F0B799"
       }
     },
     {
@@ -46,86 +46,86 @@
       "type": "os",
       "key": "󰣇 OS",
       "format": "CachyOS",
-      "keyColor": "#7AA2F7"
+      "keyColor": "#9DAAD0"
     },
     {
       "type": "os",
       "key": "󰌽 Base",
       "format": "Arch Linux",
-      "keyColor": "#7DCFFF"
+      "keyColor": "#ED93A9"
     },
     {
       "type": "kernel",
       "key": "󰘚 Kernel",
-      "keyColor": "#BB9AF7"
+      "keyColor": "#F0B799"
     },
     {
       "type": "uptime",
       "key": "󰅐 Uptime",
-      "keyColor": "#73DACA"
+      "keyColor": "#D9D6B2"
     },
     {
       "type": "packages",
       "key": "󰏗 Packages",
-      "keyColor": "#9ECE6A"
+      "keyColor": "#C7A0B8"
     },
     "break",
     // --- Hardware ---
     {
       "type": "host",
       "key": "󰍹 Host",
-      "keyColor": "#7AA2F7"
+      "keyColor": "#9DAAD0"
     },
     {
       "type": "cpu",
       "key": "󰻠 CPU",
       "temp": true,
       "format": "{1} {temperature}",
-      "keyColor": "#7DCFFF"
+      "keyColor": "#ED93A9"
     },
     {
       "type": "gpu",
       "key": "󰢮 GPU",
       "temp": true,
       "format": "{2} {temperature}",
-      "keyColor": "#BB9AF7"
+      "keyColor": "#F0B799"
     },
     {
       "type": "memory",
       "key": "󰑭 Memory",
-      "keyColor": "#73DACA"
+      "keyColor": "#D9D6B2"
     },
     {
       "type": "disk",
       "key": "󰋊 Storage",
-      "keyColor": "#9ECE6A"
+      "keyColor": "#C7A0B8"
     },
     "break",
     // --- Environment ---
     {
       "type": "shell",
       "key": "󰆍 Shell",
-      "keyColor": "#7AA2F7"
+      "keyColor": "#9DAAD0"
     },
     {
       "type": "de",
       "key": "󰟀 DE",
-      "keyColor": "#7DCFFF"
+      "keyColor": "#ED93A9"
     },
     {
       "type": "wm",
       "key": "󰖯 WM",
-      "keyColor": "#BB9AF7"
+      "keyColor": "#F0B799"
     },
     {
       "type": "terminal",
       "key": "󰞷 Terminal",
-      "keyColor": "#73DACA"
+      "keyColor": "#D9D6B2"
     },
     {
       "type": "terminalfont",
       "key": "󰛖 Font",
-      "keyColor": "#9ECE6A"
+      "keyColor": "#C7A0B8"
     },
     "break",
     "colors"
