@@ -14,7 +14,7 @@
 | Window decoration | Klassy |
 | Window blur | `kwin-effects-glass` (force blur, rounded corners, refraction) |
 | Icons | `Vimix-dark` |
-| GTK | Breeze |
+| GTK | Breeze Dark |
 | UI font | Inter 10 |
 | Mono font | JetBrainsMono Nerd Font Mono 10 |
 | Terminal | kitty |
