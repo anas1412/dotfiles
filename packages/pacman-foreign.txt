@@ -1,6 +1,8 @@
 ani-cli
+aseprite
 cliamp-bin
 instagram-cli
+kde-material-you-colors
 kind-bin
 klassy-bin
 kwin-effects-glass-git
@@ -10,6 +12,7 @@ plasma6-applets-panel-colorizer
 spotifast-bin
 tokyonight-gtk-theme-git
 ttf-ms-fonts
+vimix-icon-theme
 visual-studio-code-bin
 ytmdesktop-bin
 ytmgo-bin

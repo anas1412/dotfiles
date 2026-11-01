@@ -39,3 +39,4 @@ source "$HOME/.railway/env.fish"
 # kubeconfig: every yml/yaml in ~/.kube, merged
 set -l kc (path filter -f ~/.kube/config) ~/.kube/*.yml ~/.kube/*.yaml
 test (count $kc) -gt 0; and set -gx KUBECONFIG (string join : $kc)
+alias docker=podman

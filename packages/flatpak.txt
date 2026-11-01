@@ -1,3 +1,6 @@
+app.freelens.Freelens
 com.championpeak87.cosmic-ext-classic-menu
 dev.edfloreshz.CosmicTweaks
 io.github.TopiCsarno.YapCap
+io.github.word_sys.word-sys-pdf-editor
+io.kinvolk.Headlamp

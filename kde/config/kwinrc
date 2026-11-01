@@ -2,11 +2,10 @@
 Id_1=41adafeb-7400-44b8-85a4-cf94a94a8f66
 Id_2=aadf25ad-5216-4a23-b870-387e4689b031
 Id_3=ab476ecc-d43c-420c-8157-7024577110a9
-Id_4=18829122-40cb-4cfa-b167-40fcf237345f
 Name_1=chill
 Name_2=work
 Name_3=extra
-Number=4
+Number=3
 Rows=1
 
 [Effect-blur]
@@ -45,13 +44,14 @@ Active=true
 [Plugins]
 aeroglideEnabled=true
 aeroshell-thumbnailsEnabled=true
-blurEnabled=false
+blurEnabled=true
 dialogparentEnabled=false
 dimscreenaeroEnabled=true
 fadedesktopEnabled=true
 fadingpopupsaeroEnabled=true
 glassEnabled=true
 krohnkiteEnabled=false
+kwin4_effect_shapecornersEnabled=true
 launchfeedbackEnabled=true
 loginaeroEnabled=true
 magnetileEnabled=false
@@ -61,6 +61,12 @@ shakecursorEnabled=false
 slideEnabled=false
 squashaeroEnabled=true
 startupfeedbackEnabled=false
+
+[Round-Corners]
+ActiveOutlineAlpha=255
+InactiveOutlineAlpha=255
+InactiveOutlineColor=37,42,49
+OutlineColor=188,215,250
 
 [Script-karousel]
 floatingKeepAbove=true
@@ -97,6 +103,10 @@ tiles={"layoutDirection":"floating","tiles":[]}
 padding=8
 tiles={"layoutDirection":"floating","tiles":[]}
 
+[Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][46deb3ee-e25d-46f3-8bef-89b1839038b7]
 padding=15
 tiles={"layoutDirection":"horizontal","tiles":[{"layoutDirection":"vertical","tiles":[{"height":0.5},{"height":0.5}],"width":0.5},{"width":0.5}]}
@@ -107,6 +117,14 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][b0dcb560-eccc-4a30-854b-03e402d73145]
 padding=12
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][c07f67de-588c-4214-bab2-69f748a9bc3c]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][dae8ccc3-0622-4ecd-b64d-d50cbf2cd72d]
+padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][41adafeb-7400-44b8-85a4-cf94a94a8f66][e35054d8-f5bc-446c-8ae9-867b4a890ec2]
@@ -121,17 +139,41 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 padding=12
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][aadf25ad-5216-4a23-b870-387e4689b031][]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][aadf25ad-5216-4a23-b870-387e4689b031][46deb3ee-e25d-46f3-8bef-89b1839038b7]
 padding=4
 tiles={"layoutDirection":"floating","tiles":[]}
+
+[Tiling][aadf25ad-5216-4a23-b870-387e4689b031][c07f67de-588c-4214-bab2-69f748a9bc3c]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][aadf25ad-5216-4a23-b870-387e4689b031][dae8ccc3-0622-4ecd-b64d-d50cbf2cd72d]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][aadf25ad-5216-4a23-b870-387e4689b031][e35054d8-f5bc-446c-8ae9-867b4a890ec2]
 padding=8
 tiles={"layoutDirection":"floating","tiles":[]}
 
+[Tiling][ab476ecc-d43c-420c-8157-7024577110a9][]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][ab476ecc-d43c-420c-8157-7024577110a9][46deb3ee-e25d-46f3-8bef-89b1839038b7]
 padding=4
 tiles={"layoutDirection":"floating","tiles":[]}
+
+[Tiling][ab476ecc-d43c-420c-8157-7024577110a9][c07f67de-588c-4214-bab2-69f748a9bc3c]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][ab476ecc-d43c-420c-8157-7024577110a9][dae8ccc3-0622-4ecd-b64d-d50cbf2cd72d]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][ab476ecc-d43c-420c-8157-7024577110a9][e35054d8-f5bc-446c-8ae9-867b4a890ec2]
 padding=8
@@ -156,5 +198,6 @@ XwaylandEisNoPromptApps=python,python
 [org.kde.kdecoration2]
 ButtonsOnLeft=M
 ButtonsOnRight=H_IAX
-library=org.kde.kwin.aurorae.v2
-theme=__aurorae__svg__TokyoNight
+library=org.kde.klassy
+theme=Klassy
+
