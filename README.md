@@ -1,23 +1,26 @@
 # dotfiles
 
-**Tokyo Night** on Arch (CachyOS) + KDE Plasma 6 / Wayland. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
+**Material You** on Arch (CachyOS) + KDE Plasma 6 / Wayland. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-![Tokyo Night desktop](screenshot.png)
+![Desktop](screenshot.png)
 
 ## Theme
 
 | Layer | Value |
 |---|---|
-| Palette | Tokyo Night |
-| Qt / apps | Kvantum — `Kvantum-Tokyo-Night` |
+| Colors | `MaterialYouDark`, generated from the wallpaper by `kde-material-you-colors` |
+| Qt / apps | Klassy widget style |
+| Plasma theme | `Dream-Color-Plasma` |
+| Window decoration | Klassy |
 | Window blur | `kwin-effects-glass` (force blur, rounded corners, refraction) |
-| Window decoration | Aurorae — `TokyoNight` |
-| UI font | Noto Sans 10 |
+| Icons | `Vimix-dark` |
+| GTK | Breeze |
+| UI font | Inter 10 |
 | Mono font | JetBrainsMono Nerd Font Mono 10 |
 | Terminal | kitty |
 | Shell | fish + pure prompt |
 
-Core colors: `#7AA2F7` blue · `#7DCFFF` cyan · `#BB9AF7` purple · `#73DACA` teal · `#9ECE6A` green · `#C0CAF5` fg
+Colors follow the wallpaper, so there is no fixed palette.
 
 ## Layout
 
